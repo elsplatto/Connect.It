@@ -183,21 +183,47 @@ $topbar-sticky-class: ".sticky"
           border-bottom: 3px solid transparent
           &:hover
             background-color: $topbar-link-bg-hover
+        .has-dropdown
+          &:hover
+            ul
+              display: block
+          ul
+            display: none
         #use-it
           &:hover
             border-bottom: 3px solid $use-it-nav-bg
+            .dropdown
+              background-color: $use-it-nav-bg
+              li
+                background-color: inherit
         #fix-it
           &:hover
             border-bottom: 3px solid $fix-it-nav-bg
+            .dropdown
+              background-color: $fix-it-nav-bg
+              li
+                background-color: inherit
         #explore-it
           &:hover
             border-bottom: 3px solid $explore-it-nav-bg
+            .dropdown
+              background-color: $explore-it-nav-bg
+              li
+                background-color: inherit
         #share-it
           &:hover
             border-bottom: 3px solid $share-it-nav-bg
+            .dropdown
+              background-color: $share-it-nav-bg
+              li
+                background-color: inherit
         #about-it
           &:hover
             border-bottom: 3px solid $about-it-nav-bg
+            .dropdown
+              background-color: $about-it-nav-bg
+              li
+                background-color: inherit
         a
           background-color: transparent
           font-size: $topbar-link-font-size

@@ -111,16 +111,40 @@
           border-bottom: 3px solid transparent; }
           .nav-holder .row section ul.top-level li:hover {
             background-color: #565e69; }
+        .nav-holder .row section ul.top-level .has-dropdown:hover ul {
+          display: block; }
+        .nav-holder .row section ul.top-level .has-dropdown ul {
+          display: none; }
         .nav-holder .row section ul.top-level #use-it:hover {
           border-bottom: 3px solid #994275; }
+          .nav-holder .row section ul.top-level #use-it:hover .dropdown {
+            background-color: #994275; }
+            .nav-holder .row section ul.top-level #use-it:hover .dropdown li {
+              background-color: inherit; }
         .nav-holder .row section ul.top-level #fix-it:hover {
           border-bottom: 3px solid #f8af50; }
+          .nav-holder .row section ul.top-level #fix-it:hover .dropdown {
+            background-color: #f8af50; }
+            .nav-holder .row section ul.top-level #fix-it:hover .dropdown li {
+              background-color: inherit; }
         .nav-holder .row section ul.top-level #explore-it:hover {
           border-bottom: 3px solid #e35d68; }
+          .nav-holder .row section ul.top-level #explore-it:hover .dropdown {
+            background-color: #e35d68; }
+            .nav-holder .row section ul.top-level #explore-it:hover .dropdown li {
+              background-color: inherit; }
         .nav-holder .row section ul.top-level #share-it:hover {
           border-bottom: 3px solid #1a7bc0; }
+          .nav-holder .row section ul.top-level #share-it:hover .dropdown {
+            background-color: #1a7bc0; }
+            .nav-holder .row section ul.top-level #share-it:hover .dropdown li {
+              background-color: inherit; }
         .nav-holder .row section ul.top-level #about-it:hover {
           border-bottom: 3px solid #6dd2b4; }
+          .nav-holder .row section ul.top-level #about-it:hover .dropdown {
+            background-color: #6dd2b4; }
+            .nav-holder .row section ul.top-level #about-it:hover .dropdown li {
+              background-color: inherit; }
         .nav-holder .row section ul.top-level a {
           background-color: transparent;
           font-size: 1.2em;
