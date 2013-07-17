@@ -1,0 +1,58 @@
+/* Background color for the top bar */
+/* Height and margin */
+/* Control Input height for top bar */
+/* Controlling the styles for the title in the top bar */
+/* Style the top bar dropdown elements */
+/* Set the link colors and styles for top-level nav */
+/* Top menu icon styles */
+/* Transitions and breakpoint styles */
+/* Divider Styles */
+/* Sticky Class */
+/* START: override foundation classes */
+.row {
+  max-width: 60em; }
+
+.column, .columns {
+  padding-left: 1.125em;
+  padding-right: 1.125em; }
+
+.large-1 {
+  height: 1200px;
+  outline: 1px solid red; }
+
+/* END: override foundation classes */
+.global-header {
+  background-color: #22252a;
+  height: 50px;
+  width: auto; }
+  .global-header .logo {
+    float: left;
+    width: 124px;
+    height: 50px; }
+  .global-header .right {
+    height: 50px;
+    width: auto; }
+  .global-header a {
+    display: table-cell;
+    vertical-align: middle;
+    width: 30px;
+    height: inherit;
+    text-align: center; }
+  .global-header .circle {
+    width: 30px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 16px; }
+
+.banner-holder {
+  height: 9.063em;
+  background-color: #60cdae;
+  border-bottom: 1px solid #82e6ca; }
+
+.nav-holder {
+  width: 100%;
+  height: auto;
+  background-color: #60cdae; }
+  .nav-holder nav.top-bar {
+    background-color: transparent;
+    margin: 0; }

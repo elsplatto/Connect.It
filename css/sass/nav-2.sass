@@ -1,0 +1,221 @@
+$header-bg: #22252a
+$circle-bg: #555e67
+
+
+$use-it-nav-bg: #994275
+$fix-it-nav-bg: #f8af50
+$explore-it-nav-bg: #e35d68
+$share-it-nav-bg: #1a7bc0
+$about-it-nav-bg: #6dd2b4
+
+$serif-font-family: 'Fjord One', serif
+
+
+/* Background color for the top bar */
+$topbar-bg: #424b54
+
+/* Height and margin */
+$topbar-height: 70px
+$topbar-list-item-height: 67px
+
+/* Control Input height for top bar */
+$topbar-input-height: 2.45em
+
+/* Controlling the styles for the title in the top bar */
+$topbar-title-weight: bold
+$topbar-title-font-size: 1.5em
+
+/* Style the top bar dropdown elements */
+$topbar-dropdown-bg: #222
+$topbar-dropdown-link-color: #fff
+$topbar-dropdown-link-bg: lighten($topbar-bg, 5%)
+$topbar-dropdown-toggle-size: 5px
+$topbar-dropdown-toggle-color: #fff
+$topbar-dropdown-toggle-alpha: 0.5
+
+/* Set the link colors and styles for top-level nav */
+$topbar-link-color: #fff
+$topbar-link-color-hover: #fff
+$topbar-link-color-active: #fff
+$topbar-link-weight: normal
+$topbar-link-font-size: 1.2em
+$topbar-link-bg-hover: #565e69
+$topbar-link-padding: 0.65em 1em 0.5em!important
+$topbar-link-hover-padding: 0.65em 1em 0.5em!important
+
+$topbar-dropdown-label-color: #555
+$topbar-dropdown-label-text-transform: uppercase
+$topbar-dropdown-label-font-weight: bold
+$topbar-dropdown-label-font-size: emCalc(10)
+
+/* Top menu icon styles */
+$topbar-menu-link-transform: uppercase
+$topbar-menu-link-font-size: emCalc(13)
+$topbar-menu-link-weight: bold
+$topbar-menu-link-color: #fff
+$topbar-menu-icon-color: #fff
+$topbar-menu-link-color-toggled: #888
+$topbar-menu-icon-color-toggled: #888
+
+/* Transitions and breakpoint styles */
+$topbar-transition-speed: 300ms
+$topbar-breakpoint: emCalc(940) /* Change to 9999px for always mobile layout */
+$topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")"
+
+/* Divider Styles */
+$topbar-divider-border-bottom: solid 1px lighten($topbar-bg, 10%)
+$topbar-divider-border-top: solid 1px darken($topbar-bg, 10%)
+
+/* Sticky Class */
+$topbar-sticky-class: ".sticky"
+
+
+/* START: override foundation classes */
+
+.row
+  max-width: 60em
+
+.column, .columns
+  padding-left: 1.125em
+  padding-right: 1.125em
+
+
+
+
+.top-bar-section .has-dropdown > a:after
+  border: none
+
+.top-bar-section .has-dropdown > a
+  padding: $topbar-link-padding
+
+.top-bar .toggle-topbar.menu-icon a
+  width: auto
+
+.top-bar-section ul.right li .dropdown
+  width: 100%
+
+@media only screen and (min-width: 58.75em)
+  .nav-holder .large-12,
+  .nav-holder .columns,
+  .nav-holder .top-bar,
+  .nav-holder .top-bar-section,
+  .top-bar-section .has-dropdown
+    position: static
+
+
+.top-bar-section .dropdown li label
+  padding: 8px 15px 2px
+  margin-bottom: 0
+  color: #fff
+  font-family: $serif-font-family
+  text-transform: none
+  font-weight: normal
+  font-size: 1.625em
+  background-color: transparent
+
+
+  /* END: override foundation classes */
+
+.global-header
+  background-color: $header-bg
+  height: 50px
+  width: auto
+  .NSWlogo
+    float: left
+    width: 124px
+    height: 50px
+
+  .right
+    height: 50px
+    width: auto
+    .profile
+      width: auto
+  a
+    display: table-cell
+    vertical-align: middle
+    width: 30px
+    height: inherit
+    text-align: center
+
+    .circle
+      width: 30px
+      height: 30px
+      border: 1px solid transparent
+      border-radius: 16px
+      margin: 0 0 0 10px
+      display: block
+    .grey
+      background-color: $circle-bg
+
+.nav-holder
+  width: 100%
+  height: auto
+  background-color: $topbar-bg
+  .row
+    height: auto
+    min-height: $topbar-height
+    nav.top-bar
+      background-color: transparent
+      margin: 0
+      .title-area
+        height: $topbar-height
+        background-color: transparent
+        li
+          height: $topbar-height
+          width: 165px
+          h1
+            height: $topbar-height
+            width: 165px
+            a
+              height: $topbar-height
+              width: 165px
+              text-indent: -10000px
+              background: url(img/connectIt-logo.png) no-repeat
+    section
+      height: auto
+      ul.top-level
+        height: auto
+        background-color: $topbar-bg
+        li
+          height: $topbar-list-item-height
+          background-color: $topbar-bg
+          padding: 0
+          border-bottom: 3px solid transparent
+          &:hover
+            background-color: $topbar-link-bg-hover
+        #use-it
+          &:hover
+            border-bottom: 3px solid $use-it-nav-bg
+        #fix-it
+          &:hover
+            border-bottom: 3px solid $fix-it-nav-bg
+        #explore-it
+          &:hover
+            border-bottom: 3px solid $explore-it-nav-bg
+        #share-it
+          &:hover
+            border-bottom: 3px solid $share-it-nav-bg
+        #about-it
+          &:hover
+            border-bottom: 3px solid $about-it-nav-bg
+        a
+          background-color: transparent
+          font-size: $topbar-link-font-size
+          font-weight: $topbar-link-weight
+          padding: $topbar-link-padding
+
+        .label-holder
+          max-width: 60em
+          margin: 0 auto
+          float: none
+          clear: both
+
+
+
+
+
+
+
+
+
+
