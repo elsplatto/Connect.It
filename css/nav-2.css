@@ -49,7 +49,7 @@
 .global-header {
   background-color: #22252a;
   height: 50px;
-  width: auto; }
+  width: 100%; }
   .global-header .NSWlogo {
     float: left;
     width: 124px;
@@ -105,16 +105,19 @@
         height: auto;
         background-color: #424b54; }
         .nav-holder .row section ul.top-level li {
-          height: 67px;
+          height: 70px;
           background-color: #424b54;
           padding: 0;
           border-bottom: 3px solid transparent; }
+          .nav-holder .row section ul.top-level li a {
+            height: 70px; }
           .nav-holder .row section ul.top-level li:hover {
             background-color: #565e69; }
-        .nav-holder .row section ul.top-level .has-dropdown:hover ul {
-          display: block; }
-        .nav-holder .row section ul.top-level .has-dropdown ul {
-          display: none; }
+        @media only screen and (min-width: 58.75em) {
+          .nav-holder .row section ul.top-level .has-dropdown:hover ul {
+            display: block; }
+          .nav-holder .row section ul.top-level .has-dropdown ul {
+            display: none; } }
         .nav-holder .row section ul.top-level #use-it:hover {
           border-bottom: 3px solid #994275; }
           .nav-holder .row section ul.top-level #use-it:hover .dropdown {

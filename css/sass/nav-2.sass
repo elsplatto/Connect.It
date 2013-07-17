@@ -16,7 +16,7 @@ $topbar-bg: #424b54
 
 /* Height and margin */
 $topbar-height: 70px
-$topbar-list-item-height: 67px
+$topbar-list-item-height: 70px
 
 /* Control Input height for top bar */
 $topbar-input-height: 2.45em
@@ -79,9 +79,6 @@ $topbar-sticky-class: ".sticky"
   padding-left: 1.125em
   padding-right: 1.125em
 
-
-
-
 .top-bar-section .has-dropdown > a:after
   border: none
 
@@ -119,7 +116,7 @@ $topbar-sticky-class: ".sticky"
 .global-header
   background-color: $header-bg
   height: 50px
-  width: auto
+  width: 100%
   .NSWlogo
     float: left
     width: 124px
@@ -177,18 +174,21 @@ $topbar-sticky-class: ".sticky"
         height: auto
         background-color: $topbar-bg
         li
-          height: $topbar-list-item-height
+          height: $topbar-height
           background-color: $topbar-bg
           padding: 0
           border-bottom: 3px solid transparent
+          a
+            height: $topbar-height
           &:hover
             background-color: $topbar-link-bg-hover
-        .has-dropdown
-          &:hover
+        @media only screen and (min-width: 58.75em)
+          .has-dropdown
+            &:hover
+              ul
+                display: block
             ul
-              display: block
-          ul
-            display: none
+              display: none
         #use-it
           &:hover
             border-bottom: 3px solid $use-it-nav-bg
