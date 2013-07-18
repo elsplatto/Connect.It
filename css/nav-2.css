@@ -110,7 +110,8 @@
           padding: 0;
           border-bottom: 3px solid transparent; }
           .nav-holder .row section ul.top-level li a {
-            height: 70px; }
+            height: 70px;
+            text-transform: uppercase; }
           .nav-holder .row section ul.top-level li:hover {
             background-color: #565e69; }
         @media only screen and (min-width: 58.75em) {
@@ -150,11 +151,48 @@
               background-color: inherit; }
         .nav-holder .row section ul.top-level a {
           background-color: transparent;
-          font-size: 1.2em;
+          font-size: 1em;
           font-weight: normal;
           padding: 0.65em 1em 0.5em !important; }
-        .nav-holder .row section ul.top-level .label-holder {
-          max-width: 60em;
-          margin: 0 auto;
-          float: none;
-          clear: both; }
+        .nav-holder .row section ul.top-level li ul {
+          height: auto; }
+          .nav-holder .row section ul.top-level li ul ul {
+            height: auto;
+            margin: 0 auto;
+            max-width: 62.25em;
+            float: none;
+            clear: both;
+            background-color: transparent; }
+            .nav-holder .row section ul.top-level li ul ul li {
+              background-color: transparent;
+              float: left;
+              height: auto;
+              width: auto;
+              border: none; }
+              .nav-holder .row section ul.top-level li ul ul li:first-child {
+                padding-left: 0px !important; }
+                .nav-holder .row section ul.top-level li ul ul li:first-child a {
+                  padding: 2em 3em 2em 1em !important; }
+              .nav-holder .row section ul.top-level li ul ul li a {
+                padding: 2em 3em !important;
+                text-transform: none;
+                height: auto; }
+                .nav-holder .row section ul.top-level li ul ul li a:hover {
+                  background-color: rgba(255, 255, 255, 0.2); }
+          .nav-holder .row section ul.top-level li ul .label-holder {
+            height: auto;
+            margin: 0 auto;
+            max-width: 60em;
+            float: none;
+            clear: both;
+            border: none; }
+            .nav-holder .row section ul.top-level li ul .label-holder label {
+              display: block;
+              padding: 30px 0 0 0; }
+              .nav-holder .row section ul.top-level li ul .label-holder label hr {
+                margin: 30px 0 0 0;
+                padding: 0;
+                background-color: white;
+                opacity: 0.2;
+                border: none;
+                height: 1px; }

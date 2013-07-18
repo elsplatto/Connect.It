@@ -38,10 +38,11 @@ $topbar-link-color: #fff
 $topbar-link-color-hover: #fff
 $topbar-link-color-active: #fff
 $topbar-link-weight: normal
-$topbar-link-font-size: 1.2em
+$topbar-link-font-size: 1em
 $topbar-link-bg-hover: #565e69
 $topbar-link-padding: 0.65em 1em 0.5em!important
-$topbar-link-hover-padding: 0.65em 1em 0.5em!important
+$topbar-link-second-level-padding: 2em 3em!important
+$topbar-link-second-level-first-child-padding: 2em 3em 2em 1em!important
 
 $topbar-dropdown-label-color: #555
 $topbar-dropdown-label-text-transform: uppercase
@@ -180,6 +181,7 @@ $topbar-sticky-class: ".sticky"
           border-bottom: 3px solid transparent
           a
             height: $topbar-height
+            text-transform: uppercase
           &:hover
             background-color: $topbar-link-bg-hover
         @media only screen and (min-width: 58.75em)
@@ -189,6 +191,7 @@ $topbar-sticky-class: ".sticky"
                 display: block
             ul
               display: none
+
         #use-it
           &:hover
             border-bottom: 3px solid $use-it-nav-bg
@@ -224,17 +227,58 @@ $topbar-sticky-class: ".sticky"
               background-color: $about-it-nav-bg
               li
                 background-color: inherit
+
         a
           background-color: transparent
           font-size: $topbar-link-font-size
           font-weight: $topbar-link-weight
           padding: $topbar-link-padding
+        li
+          ul
+            height: auto
+            ul
+              height: auto
+              margin: 0 auto
+              max-width: 62.25em
+              float: none
+              clear: both
+              background-color: transparent
+              li
+                background-color: transparent
+                float: left
+                height: auto
+                width: auto
+                border: none
+                &:first-child
+                  padding-left: 0px!important
+                  a
+                    padding: $topbar-link-second-level-first-child-padding
+                a
+                  padding: $topbar-link-second-level-padding
+                  text-transform: none
+                  height: auto
+                  &:hover
+                    background-color: rgba(255,255,255, 0.2)
 
-        .label-holder
-          max-width: 60em
-          margin: 0 auto
-          float: none
-          clear: both
+            .label-holder
+              height: auto
+              margin: 0 auto
+              max-width: 60em
+              float: none
+              clear: both
+              border: none
+              label
+                display: block
+                padding: 30px 0 0 0
+                hr
+                  margin: 30px 0 0 0
+                  padding: 0
+                  background-color: #fff
+                  opacity: 0.2
+                  border: none
+                  height: 1px
+
+
 
 
 
