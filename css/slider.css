@@ -1,0 +1,275 @@
+/* Background color for the top bar */
+/* Height and margin */
+/* Control Input height for top bar */
+/* Controlling the styles for the title in the top bar */
+/* Style the top bar dropdown elements */
+/* Set the link colors and styles for top-level nav */
+/* Top menu icon styles */
+/* Transitions and breakpoint styles */
+/* Divider Styles */
+/* Sticky Class */
+/* START: override foundation classes */
+.row {
+  max-width: 60em; }
+
+.column, .columns {
+  padding-left: 1.125em;
+  padding-right: 1.125em; }
+
+.top-bar-section .has-dropdown > a:after {
+  border: none; }
+
+.top-bar-section .has-dropdown > a {
+  padding: 0.65em 1em 0.5em !important; }
+
+.top-bar .toggle-topbar.menu-icon a {
+  width: auto; }
+
+.top-bar-section ul.right li .dropdown {
+  width: 100%; }
+
+@media only screen and (min-width: 58.75em) {
+  .nav-holder .large-12,
+  .nav-holder .columns,
+  .nav-holder .top-bar,
+  .nav-holder .top-bar-section,
+  .top-bar-section .has-dropdown {
+    position: static; } }
+.top-bar-section .dropdown li label {
+  padding: 8px 15px 2px;
+  margin-bottom: 0;
+  color: white;
+  font-family: "Fjord One", serif;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 1.625em;
+  background-color: transparent; }
+
+.top-bar .toggle-topbar.menu-icon a span {
+  -webkit-box-shadow: 0 10px 0 1px #434a52, 0 16px 0 1px #434a52, 0 22px 0 1px #434a52;
+  box-shadow: 0 10px 0 1px #434a52, 0 16px 0 1px #434a52, 0 22px 0 1px #434a52;
+  color: #434a52; }
+
+.top-bar.expanded .title-area {
+  background-color: white; }
+
+/*Orbit Classes */
+.orbit-bullets {
+  position: absolute;
+  top: 352px;
+  left: 420px; }
+
+.orbit-bullets li {
+  background: white;
+  border: 2px solid white;
+  opacity: 0.2;
+  margin-right: 12px; }
+
+.orbit-bullets li.active {
+  opacity: 1;
+  background: white; }
+
+/* END: override foundation classes */
+.global-header {
+  background-color: #22252a;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 99; }
+  .global-header .NSWlogo {
+    float: left;
+    width: 124px;
+    height: 50px; }
+  .global-header .right {
+    height: 50px;
+    width: auto; }
+    .global-header .right .profile {
+      width: auto; }
+    .global-header .right a, .global-header .right span {
+      display: table-cell;
+      vertical-align: middle;
+      height: inherit;
+      text-align: center;
+      font-size: 0.8em; }
+    .global-header .right span {
+      color: white;
+      padding: 0 10px; }
+    .global-header .right .logout {
+      color: #929292;
+      text-decoration: underline;
+      font-style: italic; }
+    .global-header .right .circle {
+      width: 30px;
+      height: 30px;
+      border: 1px solid transparent;
+      border-radius: 16px;
+      margin: 0 0 0 10px;
+      display: block; }
+    .global-header .right .grey {
+      background-color: #555e67; }
+
+.banner-holder {
+  position: relative;
+  top: 50px;
+  width: 100%;
+  height: 94px;
+  background-color: white; }
+  .banner-holder .row {
+    width: 100%; }
+    .banner-holder .row .large-12 {
+      width: 100%;
+      text-align: center;
+      height: 94px;
+      position: relative;
+      display: table-cell; }
+      .banner-holder .row .large-12 h1 {
+        vertical-align: middle;
+        height: 34px;
+        width: 277px;
+        margin: 30px auto;
+        padding: 0;
+        background: url(img/logo.png) no-repeat; }
+        .banner-holder .row .large-12 h1 a {
+          height: 34px;
+          width: 277px;
+          text-indent: -10000px;
+          display: block; }
+
+.nav-holder {
+  position: relative;
+  top: 50px;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border-top: 1px solid #e0e0e2; }
+  .nav-holder .row {
+    height: auto;
+    min-height: 70px; }
+    .nav-holder .row nav.top-bar {
+      background-color: transparent;
+      margin: 0; }
+      .nav-holder .row nav.top-bar section {
+        height: auto; }
+        .nav-holder .row nav.top-bar section ul.top-level {
+          width: 100%;
+          height: auto;
+          background-color: white; }
+          .nav-holder .row nav.top-bar section ul.top-level li {
+            height: 70px;
+            background-color: white;
+            width: 18.73%;
+            padding: 0;
+            border-style: solid;
+            border-color: #e0e0e2;
+            border-width: 0 1px 0 0;
+            text-align: center; }
+            .nav-holder .row nav.top-bar section ul.top-level li a {
+              height: 70px;
+              color: #434a52;
+              text-align: center; }
+            .nav-holder .row nav.top-bar section ul.top-level li:hover a {
+              color: white; }
+          .nav-holder .row nav.top-bar section ul.top-level li.search {
+            width: 4.762%;
+            border-width: 0; }
+            .nav-holder .row nav.top-bar section ul.top-level li.search a {
+              text-indent: -10000px;
+              background: url(img/icon-search.png) no-repeat center center; }
+          @media only screen and (min-width: 58.75em) {
+            .nav-holder .row nav.top-bar section ul.top-level .has-dropdown:hover ul {
+              display: block; }
+            .nav-holder .row nav.top-bar section ul.top-level .has-dropdown ul {
+              display: none; } }
+          .nav-holder .row nav.top-bar section ul.top-level #use-it:hover {
+            border-bottom: 3px solid #994275;
+            background-color: #994275; }
+            .nav-holder .row nav.top-bar section ul.top-level #use-it:hover .dropdown {
+              background-color: #994275; }
+              .nav-holder .row nav.top-bar section ul.top-level #use-it:hover .dropdown li {
+                background-color: inherit; }
+          .nav-holder .row nav.top-bar section ul.top-level #fix-it:hover {
+            border-bottom: 3px solid #f8af50;
+            background-color: #f8af50; }
+            .nav-holder .row nav.top-bar section ul.top-level #fix-it:hover .dropdown {
+              background-color: #f8af50; }
+              .nav-holder .row nav.top-bar section ul.top-level #fix-it:hover .dropdown li {
+                background-color: inherit; }
+          .nav-holder .row nav.top-bar section ul.top-level #explore-it:hover {
+            border-bottom: 3px solid #e35d68;
+            background-color: #e35d68; }
+            .nav-holder .row nav.top-bar section ul.top-level #explore-it:hover .dropdown {
+              background-color: #e35d68; }
+              .nav-holder .row nav.top-bar section ul.top-level #explore-it:hover .dropdown li {
+                background-color: inherit; }
+          .nav-holder .row nav.top-bar section ul.top-level #share-it:hover {
+            border-bottom: 3px solid #1a7bc0;
+            background-color: #1a7bc0; }
+            .nav-holder .row nav.top-bar section ul.top-level #share-it:hover .dropdown {
+              background-color: #1a7bc0; }
+              .nav-holder .row nav.top-bar section ul.top-level #share-it:hover .dropdown li {
+                background-color: inherit; }
+          .nav-holder .row nav.top-bar section ul.top-level #about-it:hover {
+            border-bottom: 3px solid #6dd2b4;
+            background-color: #6dd2b4; }
+            .nav-holder .row nav.top-bar section ul.top-level #about-it:hover .dropdown {
+              background-color: #6dd2b4; }
+              .nav-holder .row nav.top-bar section ul.top-level #about-it:hover .dropdown li {
+                background-color: inherit; }
+          .nav-holder .row nav.top-bar section ul.top-level a {
+            background-color: transparent;
+            font-size: 1em;
+            font-weight: normal;
+            padding: 0.65em 1em 0.5em !important; }
+          .nav-holder .row nav.top-bar section ul.top-level li ul {
+            height: auto; }
+            .nav-holder .row nav.top-bar section ul.top-level li ul ul {
+              height: auto !important;
+              width: 100%;
+              margin: 0 auto;
+              max-width: 60em;
+              float: none;
+              clear: both;
+              background-color: transparent; }
+              .nav-holder .row nav.top-bar section ul.top-level li ul ul li {
+                background-color: transparent;
+                float: left;
+                height: auto;
+                width: auto;
+                border: none;
+                text-align: center; }
+                .nav-holder .row nav.top-bar section ul.top-level li ul ul li a {
+                  padding: 2em 3em !important;
+                  text-transform: none;
+                  height: auto; }
+                  .nav-holder .row nav.top-bar section ul.top-level li ul ul li a:hover {
+                    background-color: rgba(255, 255, 255, 0.2); }
+            .nav-holder .row nav.top-bar section ul.top-level li ul .label-holder {
+              height: auto;
+              margin: 0 auto;
+              min-width: 60em;
+              float: none;
+              clear: both;
+              border: none; }
+              .nav-holder .row nav.top-bar section ul.top-level li ul .label-holder label {
+                display: block;
+                padding: 30px 0 0 0; }
+                .nav-holder .row nav.top-bar section ul.top-level li ul .label-holder label hr {
+                  margin: 30px 0 0 0;
+                  padding: 0;
+                  background-color: white;
+                  opacity: 0.2;
+                  border: none;
+                  height: 1px; }
+
+.slider-holder {
+  width: 100%;
+  position: relative;
+  top: 50px;
+  background-color: #60cdae;
+  height: 385px; }
+
+@media only screen and (min-width: 768px) {
+  .nav-holder .row .columns {
+    padding: 0; }
+    .nav-holder .row .columns .title-area .name {
+      padding-left: 0.95em; } }
