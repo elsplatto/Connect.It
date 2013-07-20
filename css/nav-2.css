@@ -196,3 +196,13 @@
                 opacity: 0.2;
                 border: none;
                 height: 1px; }
+
+@media only screen and (min-width: 768px) {
+  .nav-holder .row .columns {
+    padding: 0; }
+    .nav-holder .row .columns .title-area .name {
+      padding-left: 0.95em; }
+    .nav-holder .row .columns .top-bar-section .top-level li {
+      border: none; }
+      .nav-holder .row .columns .top-bar-section .top-level li:hover {
+        border: none; } }
