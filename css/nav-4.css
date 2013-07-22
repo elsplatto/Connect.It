@@ -107,7 +107,6 @@
     .global-header .rightside .profile {
       position: relative;
       width: auto;
-      padding-top: 10px;
       z-index: 500; }
     .global-header .rightside .f-dropdown {
       text-align: left; }
@@ -189,11 +188,11 @@
         left: 220px;
         height: 20px;
         padding: 2px 4px; }
-      .global-header .rightside .f-dropdown li.logout {
+      .global-header .rightside .f-dropdown li.drop-logout {
         display: none;
         font-style: normal;
         text-decoration: none; }
-        .global-header .rightside .f-dropdown li.logout:before {
+        .global-header .rightside .f-dropdown li.drop-logout:before {
           content: "";
           position: absolute;
           top: 9px;
@@ -205,7 +204,6 @@
           background-position: -14px -18px; }
     .global-header .rightside .notification {
       position: relative;
-      padding-top: 10px;
       background-color: #555e67;
       background-image: url(img/icon-notification.png);
       background-repeat: no-repeat;
@@ -215,8 +213,7 @@
       padding-top: 18px; }
     .global-header .rightside a, .global-header .rightside span {
       display: inline-block;
-      vertical-align: middle;
-      height: inherit;
+      height: auto;
       text-align: center;
       font-size: 0.8em;
       position: relative; }
@@ -226,15 +223,17 @@
     .global-header .rightside .logout {
       color: #929292;
       text-decoration: underline;
-      padding-top: 18px;
+      padding-top: 0px;
       padding-left: 10px;
-      font-style: italic; }
+      font-style: italic;
+      vertical-align: middle;
+      top: -10px; }
     .global-header .rightside .circle {
       width: 30px;
       height: 30px;
       border: 1px solid transparent;
       border-radius: 16px;
-      margin: 0 0 0 10px; }
+      margin: 10px 0 0 10px; }
     .global-header .rightside .badge {
       background-color: #e04e5b;
       padding: 1px;
@@ -413,7 +412,7 @@
   .global-header .NSWlogo {
     width: 50px;
     background-color: white; }
-  .global-header .right .logout {
-    display: none; }
-  .global-header .right .f-dropdown li.logout {
-    display: inline-block; } }
+  .global-header .rightside a.logout {
+    display: none !important; }
+  .global-header .f-dropdown li.drop-logout {
+    display: inline-block !important; } }

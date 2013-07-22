@@ -180,7 +180,6 @@ $drop-down-border-color: #e0e0e0
     .profile
       position: relative
       width: auto
-      padding-top: 10px
       z-index: 500
 
     .f-dropdown
@@ -266,7 +265,7 @@ $drop-down-border-color: #e0e0e0
           left: 220px
           height: 20px
           padding: 2px 4px
-      li.logout
+      li.drop-logout
         display: none
         font-style: normal
         text-decoration: none
@@ -286,7 +285,6 @@ $drop-down-border-color: #e0e0e0
 
     .notification
       position: relative
-      padding-top: 10px
       background-color: $circle-bg
       background-image: url(img/icon-notification.png)
       background-repeat: no-repeat
@@ -296,8 +294,7 @@ $drop-down-border-color: #e0e0e0
       padding-top: 18px
     a, span
       display: inline-block
-      vertical-align: middle
-      height: inherit
+      height: auto
       text-align: center
       font-size: 0.8em
       position: relative
@@ -308,15 +305,17 @@ $drop-down-border-color: #e0e0e0
     .logout
       color: #929292
       text-decoration: underline
-      padding-top: 18px
+      padding-top: 0px
       padding-left: 10px
       font-style: italic
+      vertical-align: middle
+      top: -10px
     .circle
       width: 30px
       height: 30px
       border: 1px solid transparent
       border-radius: 16px
-      margin: 0 0 0 10px
+      margin: 10px 0 0 10px
 
     .badge
       background-color: $badge-color
@@ -521,12 +520,12 @@ $drop-down-border-color: #e0e0e0
     .NSWlogo
       width: 50px
       background-color: #fff
-    .right
-      .logout
-        display: none
-      .f-dropdown
-        li.logout
-          display: inline-block
+    .rightside
+      a.logout
+        display: none!important
+    .f-dropdown
+      li.drop-logout
+        display: inline-block!important
 
 
 
