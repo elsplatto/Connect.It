@@ -18,6 +18,7 @@
     },
 
     init : function (scope, method, options) {
+      //console.log(this.settings.is_hover)
       this.scope = scope || this.scope;
       Foundation.inherit(this, 'throttle scrollLeft data_options');
 
@@ -128,6 +129,7 @@
         var position = target.offset();
         position.top -= dropdown.offsetParent().offset().top;
         position.left -= dropdown.offsetParent().offset().left;
+        //console.log('['+position.left+']')
       } else {
         var position = target.position();
       }
@@ -136,9 +138,9 @@
         dropdown.css({
           position : 'absolute',
           width: '95%',
-          left: '2.5%',
+          left: position.left - this.settings.offsetLeft,
           'max-width': 'none',
-          top: position.top + this.outerHeight(target)
+          top: position.top + this.outerHeight(target) + this.settings.offsetTop
         });
       } else {
         if (!Foundation.rtl && $(window).width() > this.outerWidth(dropdown) + target.offset().left) {
@@ -150,9 +152,10 @@
           if (!dropdown.hasClass('right')) {
             dropdown.addClass('right');
           }
-          var left = position.left - (this.outerWidth(dropdown) - this.outerWidth(target));
+          //factor in left margin - may need to add other margins and padding if the become a problem
+          var marginLeft = parseInt(target.css('margin-left').replace(/[^-\d\.]/g, ''));
+          var left = position.left - (this.outerWidth(dropdown) - ((this.outerWidth(target)*2) - marginLeft) - this.settings.offsetLeft);
         }
-
         dropdown.attr('style', '').css({
           position : 'absolute',
           top: position.top + this.outerHeight(target) + this.settings.offsetTop,

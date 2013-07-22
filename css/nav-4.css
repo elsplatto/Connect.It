@@ -54,10 +54,11 @@
   background-color: white; }
 
 .f-dropdown {
-  max-width: 250px;
+  min-width: 250px;
   border: 3px solid #e0e0e0;
   border-radius: 5px;
-  z-index: 200; }
+  z-index: 200;
+  height: auto !important; }
 
 .f-dropdown:before {
   content: "";
@@ -95,99 +96,85 @@
   .global-header .NSWlogo {
     float: left;
     width: 124px;
-    height: 50px; }
-  .global-header .right {
-    position: static;
     height: 50px;
-    width: auto;
-    display: block; }
-    .global-header .right .profile {
+    text-align: right; }
+  .global-header .rightside {
+    position: relative;
+    float: right;
+    height: 50px;
+    display: block;
+    text-align: right; }
+    .global-header .rightside .profile {
       position: relative;
       width: auto;
       padding-top: 10px;
-      z-index: 100; }
-    .global-header .right .f-dropdown li {
-      position: relative;
-      display: inline-block;
-      width: 100%;
-      height: auto;
-      padding: 10px 10px 10px 30px;
-      border-bottom: 1px solid #e0e0e0;
-      font-size: 0.9em;
-      color: #424b54;
-      cursor: default;
-      line-height: 1em; }
-      .global-header .right .f-dropdown li:hover {
-        background-color: inherit; }
-    .global-header .right .f-dropdown .title {
-      color: #212429;
-      padding: 10px; }
-    .global-header .right .f-dropdown a {
-      display: inline;
-      margin: 0;
-      padding: 0;
-      font-size: 0.9em;
-      color: #212429; }
-    .global-header .right .f-dropdown .underline {
-      text-decoration: underline; }
-    .global-header .right .f-dropdown span.time {
-      float: left;
-      color: #9c9fa4;
-      padding: 0;
-      margin: 0;
-      font-style: italic;
-      display: inline;
-      font-size: 0.8em;
-      line-height: 1.8em; }
-    .global-header .right .f-dropdown li.read {
-      background-color: white; }
-      .global-header .right .f-dropdown li.read:before {
-        content: "";
-        position: absolute;
-        top: 14px;
-        left: 7px;
-        width: 12px;
-        height: 12px;
-        z-index: 0;
-        background-image: url(img/icon-sprite.png);
-        background-position: 0px -12px; }
-    .global-header .right .f-dropdown li.unread {
-      background-color: #eeeff1; }
-      .global-header .right .f-dropdown li.unread:before {
-        content: "";
-        position: absolute;
-        top: 14px;
-        left: 7px;
-        width: 12px;
-        height: 12px;
-        z-index: 0;
-        background-image: url(img/icon-sprite.png);
-        background-position: 0px 0px; }
-    .global-header .right .f-dropdown li.see-all {
-      border-bottom: none;
-      text-align: center;
-      padding: 10px; }
-      .global-header .right .f-dropdown li.see-all a {
-        color: #60cdb0; }
-    .global-header .right .f-dropdown li.my-profile:before {
-      content: "";
-      position: absolute;
-      top: 9px;
-      left: 10px;
-      width: 16px;
-      height: 16px;
-      z-index: 0;
-      background-image: url(img/icon-sprite.png);
-      background-position: -14px 0px; }
-    .global-header .right .f-dropdown li.my-profile .badge {
-      top: 8px;
-      left: 220px;
-      height: 20px;
-      padding: 2px 4px; }
-    .global-header .right .f-dropdown li.logout {
-      font-style: normal;
-      text-decoration: none; }
-      .global-header .right .f-dropdown li.logout:before {
+      z-index: 500; }
+    .global-header .rightside .f-dropdown {
+      text-align: left; }
+      .global-header .rightside .f-dropdown li {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        padding: 10px 10px 10px 30px;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 0.9em;
+        color: #424b54;
+        cursor: default;
+        line-height: 1em; }
+        .global-header .rightside .f-dropdown li:hover {
+          background-color: inherit; }
+      .global-header .rightside .f-dropdown .title {
+        color: #212429;
+        padding: 10px; }
+      .global-header .rightside .f-dropdown a {
+        display: inline;
+        margin: 0;
+        padding: 0;
+        font-size: 0.9em;
+        color: #212429; }
+      .global-header .rightside .f-dropdown .underline {
+        text-decoration: underline; }
+      .global-header .rightside .f-dropdown span.time {
+        float: left;
+        color: #9c9fa4;
+        padding: 0;
+        margin: 0;
+        font-style: italic;
+        display: inline;
+        font-size: 0.8em;
+        line-height: 1.8em; }
+      .global-header .rightside .f-dropdown li.read {
+        background-color: white; }
+        .global-header .rightside .f-dropdown li.read:before {
+          content: "";
+          position: absolute;
+          top: 14px;
+          left: 7px;
+          width: 12px;
+          height: 12px;
+          z-index: 0;
+          background-image: url(img/icon-sprite.png);
+          background-position: 0px -12px; }
+      .global-header .rightside .f-dropdown li.unread {
+        background-color: #eeeff1; }
+        .global-header .rightside .f-dropdown li.unread:before {
+          content: "";
+          position: absolute;
+          top: 14px;
+          left: 7px;
+          width: 12px;
+          height: 12px;
+          z-index: 0;
+          background-image: url(img/icon-sprite.png);
+          background-position: 0px 0px; }
+      .global-header .rightside .f-dropdown li.see-all {
+        border-bottom: none;
+        text-align: center;
+        padding: 10px; }
+        .global-header .rightside .f-dropdown li.see-all a {
+          color: #60cdb0; }
+      .global-header .rightside .f-dropdown li.my-profile:before {
         content: "";
         position: absolute;
         top: 9px;
@@ -196,39 +183,59 @@
         height: 16px;
         z-index: 0;
         background-image: url(img/icon-sprite.png);
-        background-position: -14px -18px; }
-    .global-header .right .notification {
+        background-position: -14px 0px; }
+      .global-header .rightside .f-dropdown li.my-profile .badge {
+        top: 8px;
+        left: 220px;
+        height: 20px;
+        padding: 2px 4px; }
+      .global-header .rightside .f-dropdown li.logout {
+        display: none;
+        font-style: normal;
+        text-decoration: none; }
+        .global-header .rightside .f-dropdown li.logout:before {
+          content: "";
+          position: absolute;
+          top: 9px;
+          left: 10px;
+          width: 16px;
+          height: 16px;
+          z-index: 0;
+          background-image: url(img/icon-sprite.png);
+          background-position: -14px -18px; }
+    .global-header .rightside .notification {
       position: relative;
       padding-top: 10px;
       background-color: #555e67;
       background-image: url(img/icon-notification.png);
       background-repeat: no-repeat;
-      background-position: center 3px; }
-    .global-header .right .name {
+      background-position: center 3px;
+      z-index: 500; }
+    .global-header .rightside .name {
       padding-top: 18px; }
-    .global-header .right a, .global-header .right span {
+    .global-header .rightside a, .global-header .rightside span {
       display: inline-block;
       vertical-align: middle;
       height: inherit;
       text-align: center;
       font-size: 0.8em;
       position: relative; }
-    .global-header .right span {
+    .global-header .rightside span {
       color: white;
       padding: 0 10px; }
-    .global-header .right .logout {
+    .global-header .rightside .logout {
       color: #929292;
       text-decoration: underline;
       padding-top: 18px;
       padding-left: 10px;
       font-style: italic; }
-    .global-header .right .circle {
+    .global-header .rightside .circle {
       width: 30px;
       height: 30px;
       border: 1px solid transparent;
       border-radius: 16px;
       margin: 0 0 0 10px; }
-    .global-header .right .badge {
+    .global-header .rightside .badge {
       background-color: #e04e5b;
       padding: 1px;
       border: 1px solid transparent;
@@ -402,3 +409,11 @@
     padding: 0; }
     .nav-holder .row .columns .title-area .name {
       padding-left: 0.95em; } }
+@media only screen and (max-width: 768px) {
+  .global-header .NSWlogo {
+    width: 50px;
+    background-color: white; }
+  .global-header .right .logout {
+    display: none; }
+  .global-header .right .f-dropdown li.logout {
+    display: inline-block; } }
