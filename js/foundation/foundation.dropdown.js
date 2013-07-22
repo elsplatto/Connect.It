@@ -11,6 +11,8 @@
     settings : {
       activeClass: 'open',
       is_hover: false,
+      offsetTop: 0,
+      offsetLeft: 0,
       opened: function(){},
       closed: function(){}
     },
@@ -153,8 +155,8 @@
 
         dropdown.attr('style', '').css({
           position : 'absolute',
-          top: position.top + this.outerHeight(target),
-          left: left
+          top: position.top + this.outerHeight(target) + this.settings.offsetTop,
+          left: left - this.settings.offsetLeft
         });
       }
 
