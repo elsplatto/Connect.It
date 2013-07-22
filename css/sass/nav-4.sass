@@ -192,29 +192,30 @@ $drop-down-border-color: #e0e0e0
         font-size: 0.9em
         color: #424b54
         cursor: default
+        line-height: 1em
         &:hover
           background-color: inherit
-        .title
-          font-size: 1em
-          color: #212429
-          padding: 10px
-        a
-          display: inline
-          margin: 0
-          padding: 0
-          font-size: 0.9em
-          color: #212429
-        .underline
-          text-decoration: underline
-        span.time
-          float: left
-          color: #9c9fa4
-          padding: 0
-          margin: 0
-          font-style: italic
-          display: inline
-          font-size: 0.8em
+      .title
+        color: #212429
+        padding: 10px
 
+      a
+        display: inline
+        margin: 0
+        padding: 0
+        font-size: 0.9em
+        color: #212429
+      .underline
+        text-decoration: underline
+      span.time
+        float: left
+        color: #9c9fa4
+        padding: 0
+        margin: 0
+        font-style: italic
+        display: inline
+        font-size: 0.8em
+        line-height: 1.8em
 
       li.read
         background-color: #fff
@@ -246,6 +247,37 @@ $drop-down-border-color: #e0e0e0
         padding: 10px
         a
           color: #60cdb0
+      li.my-profile
+        &:before
+          content: ''
+          position: absolute
+          top: 9px
+          left: 10px
+          width: 16px
+          height: 16px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: -14px 0px
+        .badge
+          top: 8px
+          left: 220px
+          height: 20px
+          padding: 2px 4px
+      li.logout
+        font-style: normal
+        text-decoration: none
+        &:before
+          content: ''
+          position: absolute
+          top: 9px
+          left: 10px
+          width: 16px
+          height: 16px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: -14px -18px
+
+
 
 
     .notification
@@ -272,6 +304,7 @@ $drop-down-border-color: #e0e0e0
       color: #929292
       text-decoration: underline
       padding-top: 18px
+      padding-left: 10px
       font-style: italic
     .circle
       width: 30px

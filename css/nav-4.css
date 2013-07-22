@@ -115,29 +115,30 @@
       border-bottom: 1px solid #e0e0e0;
       font-size: 0.9em;
       color: #424b54;
-      cursor: default; }
+      cursor: default;
+      line-height: 1em; }
       .global-header .right .f-dropdown li:hover {
         background-color: inherit; }
-      .global-header .right .f-dropdown li .title {
-        font-size: 1em;
-        color: #212429;
-        padding: 10px; }
-      .global-header .right .f-dropdown li a {
-        display: inline;
-        margin: 0;
-        padding: 0;
-        font-size: 0.9em;
-        color: #212429; }
-      .global-header .right .f-dropdown li .underline {
-        text-decoration: underline; }
-      .global-header .right .f-dropdown li span.time {
-        float: left;
-        color: #9c9fa4;
-        padding: 0;
-        margin: 0;
-        font-style: italic;
-        display: inline;
-        font-size: 0.8em; }
+    .global-header .right .f-dropdown .title {
+      color: #212429;
+      padding: 10px; }
+    .global-header .right .f-dropdown a {
+      display: inline;
+      margin: 0;
+      padding: 0;
+      font-size: 0.9em;
+      color: #212429; }
+    .global-header .right .f-dropdown .underline {
+      text-decoration: underline; }
+    .global-header .right .f-dropdown span.time {
+      float: left;
+      color: #9c9fa4;
+      padding: 0;
+      margin: 0;
+      font-style: italic;
+      display: inline;
+      font-size: 0.8em;
+      line-height: 1.8em; }
     .global-header .right .f-dropdown li.read {
       background-color: white; }
       .global-header .right .f-dropdown li.read:before {
@@ -168,6 +169,34 @@
       padding: 10px; }
       .global-header .right .f-dropdown li.see-all a {
         color: #60cdb0; }
+    .global-header .right .f-dropdown li.my-profile:before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: 10px;
+      width: 16px;
+      height: 16px;
+      z-index: 0;
+      background-image: url(img/icon-sprite.png);
+      background-position: -14px 0px; }
+    .global-header .right .f-dropdown li.my-profile .badge {
+      top: 8px;
+      left: 220px;
+      height: 20px;
+      padding: 2px 4px; }
+    .global-header .right .f-dropdown li.logout {
+      font-style: normal;
+      text-decoration: none; }
+      .global-header .right .f-dropdown li.logout:before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 10px;
+        width: 16px;
+        height: 16px;
+        z-index: 0;
+        background-image: url(img/icon-sprite.png);
+        background-position: -14px -18px; }
     .global-header .right .notification {
       position: relative;
       padding-top: 10px;
@@ -191,6 +220,7 @@
       color: #929292;
       text-decoration: underline;
       padding-top: 18px;
+      padding-left: 10px;
       font-style: italic; }
     .global-header .right .circle {
       width: 30px;
