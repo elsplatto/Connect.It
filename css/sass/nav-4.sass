@@ -129,6 +129,7 @@ $drop-down-border-color: #e0e0e0
   max-width: 250px
   border: 3px solid #e0e0e0
   border-radius: 5px
+  z-index: 200
 
 .f-dropdown:before
   content: ""
@@ -141,7 +142,7 @@ $drop-down-border-color: #e0e0e0
   position: absolute
   top: -29px
   left: 190px
-  z-index: 99
+  z-index: 199
 
 .f-dropdown:after
   content: ""
@@ -154,7 +155,7 @@ $drop-down-border-color: #e0e0e0
   position: absolute
   top: -35px
   left: 188px
-  z-index: 98
+  z-index: 198
 
 /* END: override foundation classes */
 
@@ -163,7 +164,7 @@ $drop-down-border-color: #e0e0e0
   height: 50px
   width: 100%
   position: fixed
-  z-index: 99
+  z-index: 200
   .NSWlogo
     float: left
     width: 124px
@@ -182,13 +183,70 @@ $drop-down-border-color: #e0e0e0
 
     .f-dropdown
       li
-        padding: 10px
+        position: relative
+        display: inline-block
+        width: 100%
+        height: auto
+        padding: 10px 10px 10px 30px
         border-bottom: 1px solid $drop-down-border-color
+        font-size: 0.9em
+        color: #424b54
+        cursor: default
+        &:hover
+          background-color: inherit
+        .title
+          font-size: 1em
+          color: #212429
+          padding: 10px
+        a
+          display: inline
+          margin: 0
+          padding: 0
+          font-size: 0.9em
+          color: #212429
+        .underline
+          text-decoration: underline
+        span.time
+          float: left
+          color: #9c9fa4
+          padding: 0
+          margin: 0
+          font-style: italic
+          display: inline
+          font-size: 0.8em
+
 
       li.read
         background-color: #fff
+        &:before
+          content: ''
+          position: absolute
+          top: 14px
+          left: 7px
+          width: 12px
+          height: 12px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: 0px -12px
       li.unread
         background-color: #eeeff1
+        &:before
+          content: ''
+          position: absolute
+          top: 14px
+          left: 7px
+          width: 12px
+          height: 12px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: 0px 0px
+      li.see-all
+        border-bottom: none
+        text-align: center
+        padding: 10px
+        a
+          color: #60cdb0
+
 
     .notification
       position: relative
