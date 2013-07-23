@@ -54,16 +54,34 @@
   background-color: white; }
 
 /*Orbit Classes */
+.orbit-container {
+  height: 385px; }
+
 .orbit-bullets {
-  position: absolute;
-  top: 352px;
-  left: 420px; }
+  clear: left;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 50%;
+  text-align: center;
+  top: -60px;
+  width: auto;
+  height: 20px;
+  overflow: visible; }
 
 .orbit-bullets li {
   background: white;
   border: 2px solid white;
   opacity: 0.2;
-  margin-right: 12px; }
+  display: block;
+  float: left;
+  list-style: none;
+  margin: 0 0 0 10px;
+  padding: 0;
+  position: relative;
+  right: 50%; }
 
 .orbit-bullets li.active {
   opacity: 1;
@@ -265,11 +283,35 @@
   width: 100%;
   position: relative;
   top: 50px;
-  background-color: #60cdae;
-  height: 385px; }
+  height: 385px;
+  text-align: center; }
+  .slider-holder .orbit-container .use-it {
+    background-color: #994275; }
+  .slider-holder .orbit-container .fix-it {
+    background-color: #f8af50; }
+  .slider-holder .orbit-container .explore-it {
+    background-color: #e35d68; }
+  .slider-holder .orbit-container .share-it {
+    background-color: #1a7bc0; }
+  .slider-holder .orbit-container .about-it {
+    background-color: #6dd2b4; }
+  .slider-holder .orbit-container .grey {
+    background-color: #3f4851; }
+  .slider-holder .orbit-container li img {
+    margin: 0 auto; }
+  .slider-holder .orbit-timer .orbit-progress {
+    background-color: white; }
+  .slider-holder .orbit-timer span {
+    border-color: transparent white transparent white;
+    color: white; }
+  .slider-holder .orbit-timer .paused > span {
+    border-color: transparent transparent transparent white;
+    border-width: 0 0 0 8px; }
 
 @media only screen and (min-width: 768px) {
-  .nav-holder .row .columns {
-    padding: 0; }
-    .nav-holder .row .columns .title-area .name {
-      padding-left: 0.95em; } }
+  .nav-holder {
+    margin: 0 auto; }
+    .nav-holder .row .columns {
+      padding: 0; }
+      .nav-holder .row .columns .title-area .name {
+        padding-left: 0.95em; } }

@@ -10,6 +10,7 @@ $fix-it-nav-bg: #f8af50
 $explore-it-nav-bg: #e35d68
 $share-it-nav-bg: #1a7bc0
 $about-it-nav-bg: #6dd2b4
+$grey-bg: #3f4851
 
 $serif-font-family: 'Fjord One', serif
 
@@ -131,16 +132,34 @@ $topbar-sticky-class: ".sticky"
 
 /*Orbit Classes*/
 
+.orbit-container
+  height: 385px
+
 .orbit-bullets
-  position: absolute
-  top: 352px
-  left: 420px
+  clear: left
+  float: left
+  list-style: none
+  margin: 0
+  padding: 0
+  position: relative
+  left: 50%
+  text-align: center
+  top: -60px
+  width: auto
+  height: 20px
+  overflow: visible
 
 .orbit-bullets li
   background: #fff
   border: 2px solid #fff
   opacity: 0.2
-  margin-right: 12px
+  display: block
+  float: left
+  list-style: none
+  margin: 0 0 0 10px
+  padding: 0
+  position: relative
+  right: 50%
 
 .orbit-bullets li.active
   opacity: 1
@@ -358,14 +377,43 @@ $topbar-sticky-class: ".sticky"
   width: 100%
   position: relative
   top: 50px
-  background-color: #60cdae
   height: 385px
+  text-align: center
+  .orbit-container
+    .use-it
+      background-color: $use-it-nav-bg
+    .fix-it
+      background-color: $fix-it-nav-bg
+    .explore-it
+      background-color: $explore-it-nav-bg
+    .share-it
+      background-color: $share-it-nav-bg
+    .about-it
+      background-color: $about-it-nav-bg
+    .grey
+      background-color: $grey-bg
+    li
+      img
+        margin: 0 auto
+  .orbit-timer
+    .orbit-progress
+      background-color: #fff
+    span
+      border-color: transparent #fff transparent #fff
+      color: #fff
+    .paused
+      > span
+        border-color: transparent transparent transparent #fff
+        border-width: 0 0 0 8px
+
+
 
 
 
 
 @media only screen and (min-width: 768px)
   .nav-holder
+    margin: 0 auto
     .row
       .columns
         padding: 0
