@@ -21,6 +21,12 @@
 
 <div id="direction-msg" class="msg"></div>
 
+<div id="nav-msg" class="msg"></div>
+
+<div id="diff-msg" class="msg"></div>
+
+<div id="nav-pad-msg" class="msg"></div>
+
 </div>
 <div id="global-header" class="global-header">
     <div class="row">
@@ -64,6 +70,8 @@
         </div>
     </div>
 </div>
+
+<nav id="nav-pad"></nav>
 
 
 <div id="nav-holder" class="nav-holder">
@@ -151,7 +159,7 @@
 
 
 <div class="row">
-    <div style="display:block; height: 1200px;">
+    <div style="display:block; height: 1800px;">
         <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate tellus ac feugiat semper. Aliquam erat volutpat. Donec faucibus congue felis at consequat. Morbi blandit, urna eu scelerisque dapibus, eros dolor malesuada ante, a congue nisi turpis ut felis. Donec quis metus urna. Sed eget neque vitae metus condimentum condimentum sed sit amet libero. Morbi non consectetur augue.
         </p>
@@ -191,12 +199,16 @@ $(document).ready(function() {
     var bannerHolder = $('#banner-holder');
     var navHolder = $('#nav-holder');
     var globalHeader = $('#global-header');
+    var navPad = $('#nav-pad');
+    var navPadTopOffset = navPad.offset().top - $(window).scrollTop();
     var bannerHolderHeight = bannerHolder.height();
     var navHolderHeight = navHolder.height();
-    var totalHeight = bannerHolderHeight + navHolderHeight;
+    var bannerNavHeight = bannerHolderHeight + navHolderHeight;
 
     var bannerHidden = false;
     var navShowing = false;
+
+
 
     $(window).bind('scrollstart', function() {
         startPos = $(window).scrollTop();
@@ -218,56 +230,72 @@ $(document).ready(function() {
         {
             scrollDirection = 'up';
         }
-        $('#start-stop-msg').html(mHTML +  '<br \/>Scroll Direction: ' + scrollDirection + '<br \/>Window Height: ' + $(this).innerHeight());
+        $('#start-stop-msg').html(mHTML +  '<br \/>Banner Nav Height: ' + bannerNavHeight + '<br \/>Scroll Direction: ' + scrollDirection + '<br \/>Window Height: ' + $(this).innerHeight());
     });
 
     $(window).scroll(function(event)
     {
+        var mHTML = $('#start-stop-msg').html();
         scrollPos = $(this).scrollTop();
+        navPadTopOffset = navPad.offset().top - scrollPos;
+        $('#nav-pad-msg').text(navPadTopOffset)
         $('#scroll-msg').html('Scroll Pos: ' + scrollPos);
-        if (startPos < 0)
-        {
-            //at top of page
-            startPos = 0;
-        }
-        if (startPos < scrollPos)
-        {
-            console.log('down')
-            //scrolling down
-            $('#direction-msg').text('down');
-            if (!bannerHidden && scrollPos >= totalHeight)
-            {
-                bannerHidden = true;
-            }
+        console.log('scrollPos: ['+scrollPos+'] navPadTopOffset: ['+navPadTopOffset+']');
 
-            if (bannerHidden)
-            {
-                if (navShowing)
-                {
-                    //hide nav
-                    navHolder.animate({top:'-22px'}, 800);
-                    navShowing = false;
-                }
+        if ((scrollPos < bannerNavHeight))
+        {
+            navHolder.stop();
+            if (scrollPos <= 0) {
+                navPadTopOffset = navPadTopOffset + scrollPos;
             }
+            navHolder.css({'top':navPadTopOffset+'px'});
         }
-        else
+        else if (!navShowing && (startPos > scrollPos) && (difference(startPos,scrollPos) > 10) && (scrollPos > 0) && (scrollPos > bannerNavHeight))
         {
             //scrolling up
+            showNav();
+            $('#nav-msg').html('Nav Showing: ' + navShowing);
+            $('#diff-msg').html('Diff: ' + difference(startPos,scrollPos));
             $('#direction-msg').text('up');
-            console.log('up')
-
-            if (bannerHidden)
-            {
-                bannerHolder.hide();
-                navHolder.addClass('respond');
-                if (!navShowing)
-                {
-                    navHolder.animate({top:'50px'}, 800);
-                    navShowing = true;
-                }
-            }
         }
+        else if (navShowing && (startPos < scrollPos) && (difference(startPos,scrollPos) > 10) && (scrollPos > bannerNavHeight))
+        {
+            //scrolling down
+            hideNav();
+            $('#nav-msg').html('Nav Showing: ' + navShowing);
+            $('#diff-msg').html('Diff: ' + difference(startPos,scrollPos));
+            $('#direction-msg').text('down');
+        }
+
+
     });
+
+    var difference = function (a, b) { return Math.abs(a - b) }
+
+
+
+    function showNav()
+    {
+        console.log('showNav triggered')
+        if (!navHolder.hasClass('respond'))
+        {
+            navHolder.addClass('respond');
+        }
+        navHolder.animate({top:'50px'}, 800);
+        navShowing = true;
+    }
+
+    function hideNav()
+    {
+        console.log('hide triggered')
+        if (navHolder.hasClass('respond'))
+        {
+            navHolder.remove('respond');
+        }
+        navHolder.animate({top:'-50px'}, 800);
+        navShowing = false;
+    }
+
 
 });
 </script>

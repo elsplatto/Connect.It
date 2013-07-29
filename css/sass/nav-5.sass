@@ -185,6 +185,19 @@ $drop-down-border-color: #e0e0e0
   top: 10px
   left: 610px
 
+#nav-msg
+  top: 10px
+  left: 910px
+
+
+#diff-msg
+  top: 100px
+  left: 910px
+
+#nav-pad-msg
+  top: 100px
+  left: 610px
+
 /*END: Debug msg*/
 
 .global-header
@@ -389,9 +402,18 @@ $drop-down-border-color: #e0e0e0
           text-indent: -10000px
           display: block
 
-.nav-holder
+#nav-pad
+  height: 71px
   position: relative
+  display: block
   top: 50px
+  background-color: #f00
+
+
+.nav-holder
+  position: fixed
+  z-index: 100
+  top: 144px
   width: 100%
   height: auto
   background-color: $topbar-bg
@@ -529,9 +551,7 @@ $drop-down-border-color: #e0e0e0
                     border: none
                     height: 1px
 #nav-holder.respond
-  position: fixed
-  z-index: 100
-  top: -10px
+  top: -22px
 
 
 
