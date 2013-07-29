@@ -1,5 +1,6 @@
 $header-bg: #22252a
-$circle-bg: #555e67
+$circle-bg: #8a9096
+$badge-color: #e04e5b
 
 $banner-height: 94px
 
@@ -10,9 +11,8 @@ $fix-it-nav-bg: #f8af50
 $explore-it-nav-bg: #e35d68
 $share-it-nav-bg: #1a7bc0
 $about-it-nav-bg: #6dd2b4
-$grey-bg: #3f4851
 
-$serif-font-family: 'Fjord One', serif
+$serif-font-family: 'PMN Caecilia', serif
 
 
 /* Background color for the top bar */
@@ -21,6 +21,8 @@ $topbar-bg: #fff
 /* Height and margin */
 $topbar-height: 70px
 $topbar-list-item-height: 70px
+
+$topbar-height-mob: 50px
 
 /* Control Input height for top bar */
 $topbar-input-height: 2.45em
@@ -74,11 +76,7 @@ $topbar-divider-border-top: solid 1px darken($topbar-bg, 10%)
 $topbar-sticky-class: ".sticky"
 
 
-
-
-
-
-
+$drop-down-border-color: #e0e0e0
 
 /* START: override foundation classes */
 
@@ -129,93 +127,240 @@ $topbar-sticky-class: ".sticky"
 .top-bar.expanded .title-area
   background-color: #fff
 
+.f-dropdown
+  min-width: 250px
+  border: 3px solid #e0e0e0
+  border-radius: 5px
+  z-index: 200
+  height: auto!important
 
-/*Orbit Classes*/
-
-.orbit-container
-  overflow: hidden
-  background-color: #f00
-  .orbit-container
-    background-color: rgba(255,255,255,0.8)
-  .orbit-slides-container
-    height: auto
-
-.orbit-bullets
-  clear: left
-  float: left
-  list-style: none
-  margin: 0
-  padding: 0
-  position: absolute
-  left: 50%
-  text-align: center
-  top: 90%
-  width: auto
-  height: 20px
-  overflow: visible
-
-.touch
-  .orbit-bullets
-    display: block
-
-.orbit-bullets li
-  background: #fff
-  border: 2px solid #fff
-  opacity: 0.2
+.f-dropdown:before
+  content: ""
   display: block
-  float: left
-  list-style: none
-  margin: 0 0 0 10px
-  padding: 0
-  position: relative
-  right: 50%
-  &:first-child
-    margin: 0
+  width: 0
+  height: 0
+  border: inset 15px
+  border-color: transparent transparent white transparent
+  border-bottom-style: solid
+  position: absolute
+  top: -29px
+  left: 190px
+  z-index: 199
 
-.orbit-bullets li.active
-  opacity: 1
-  background: #fff
+.f-dropdown:after
+  content: ""
+  display: block
+  width: 0
+  height: 0
+  border: inset 17px
+  border-color: transparent transparent $drop-down-border-color transparent
+  border-bottom-style: solid
+  position: absolute
+  top: -35px
+  left: 188px
+  z-index: 198
 
 /* END: override foundation classes */
+
+/*START: Debug msg*/
+
+.msg
+  position: fixed
+  z-index: 300
+  background-color: #333
+  color: #fff
+  border: 1px solid orange
+  width: 300px
+  height: auto
+
+#start-stop-msg
+  top: 10px
+  left: 10px
+
+#scroll-msg
+  top: 10px
+  left: 310px
+
+#direction-msg
+  top: 10px
+  left: 610px
+
+/*END: Debug msg*/
 
 .global-header
   background-color: $header-bg
   height: 50px
   width: 100%
   position: fixed
-  z-index: 99
+  z-index: 200
   .NSWlogo
     float: left
     width: 124px
     height: 50px
-
-  .right
+    text-align: right
+  .rightside
+    position: relative
+    float: right
     height: 50px
-    width: auto
+    display: block
+    text-align: right
     .profile
+      position: relative
       width: auto
+      z-index: 500
+
+    .f-dropdown
+      text-align: left
+      li
+        position: relative
+        display: inline-block
+        width: 100%
+        height: auto
+        padding: 10px 10px 10px 30px
+        border-bottom: 1px solid $drop-down-border-color
+        font-size: 0.9em
+        color: #424b54
+        cursor: default
+        line-height: 1em
+        &:hover
+          background-color: inherit
+      .title
+        color: #212429
+        padding: 10px
+
+      a
+        display: inline
+        margin: 0
+        padding: 0
+        font-size: 0.9em
+        color: #212429
+      .underline
+        text-decoration: underline
+      span.time
+        float: left
+        color: #9c9fa4
+        padding: 0
+        margin: 0
+        font-style: italic
+        display: inline
+        font-size: 0.8em
+        line-height: 1.8em
+
+      li.read
+        background-color: #fff
+        &:before
+          content: ''
+          position: absolute
+          top: 14px
+          left: 7px
+          width: 12px
+          height: 12px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: 0px -12px
+      li.unread
+        background-color: #eeeff1
+        &:before
+          content: ''
+          position: absolute
+          top: 14px
+          left: 7px
+          width: 12px
+          height: 12px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: 0px 0px
+      li.see-all
+        border-bottom: none
+        text-align: center
+        padding: 10px
+        a
+          color: #60cdb0
+      li.my-profile
+        &:before
+          content: ''
+          position: absolute
+          top: 9px
+          left: 10px
+          width: 16px
+          height: 16px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: -14px 0px
+        .badge
+          top: 8px
+          left: 220px
+          height: 20px
+          padding: 2px 4px
+      li.drop-logout
+        display: none
+        font-style: normal
+        text-decoration: none
+        &:before
+          content: ''
+          position: absolute
+          top: 9px
+          left: 10px
+          width: 16px
+          height: 16px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: -14px -18px
+
+
+
+
+    .notification
+      position: relative
+      background-color: $circle-bg
+      background-image: url(img/icon-notification.png)
+      background-repeat: no-repeat
+      background-position: center 3px
+      z-index: 500
+    .name
+      padding-top: 18px
     a, span
-      display: table-cell
-      vertical-align: middle
-      height: inherit
+      display: inline-block
+      height: auto
       text-align: center
       font-size: 0.8em
+      position: relative
+
     span
       color: #fff
       padding: 0 10px
     .logout
       color: #929292
       text-decoration: underline
+      padding-top: 0px
+      padding-left: 10px
       font-style: italic
+      vertical-align: middle
+      top: -10px
     .circle
       width: 30px
       height: 30px
       border: 1px solid transparent
       border-radius: 16px
-      margin: 0 0 0 10px
+      margin: 10px 0 0 10px
+
+    .badge
+      background-color: $badge-color
+      padding: 1px
+      border: 1px solid transparent
+      border-radius: 2px
+      position: absolute
+      top: -5px
+      left: 20px
       display: block
-    .grey
-      background-color: $circle-bg
+      color: #fff
+      height: 15px
+      width: auto
+      min-width: 15px
+      display: block
+      z-index: 100
+
+
 
 .banner-holder
   position: relative
@@ -383,63 +528,78 @@ $topbar-sticky-class: ".sticky"
                     opacity: 0.2
                     border: none
                     height: 1px
-
-.slider-holder
-  width: 100%
-  position: relative
-  top: 50px
-  height: auto
-  text-align: center
-  overflow: hidden
-  .orbit-container
-    .use-it
-      background-color: $use-it-nav-bg
-    .fix-it
-      background-color: $fix-it-nav-bg
-    .explore-it
-      background-color: $explore-it-nav-bg
-    .share-it
-      background-color: $share-it-nav-bg
-    .about-it
-      background-color: $about-it-nav-bg
-    .grey
-      background-color: $grey-bg
-    li
-      img
-        margin: 0 auto
-  .orbit-timer
-    .orbit-progress
-      background-color: #fff
-    span
-      border-color: transparent #fff transparent #fff
-      color: #fff
-    .paused
-      > span
-        border-color: transparent transparent transparent #fff
-        border-width: 0 0 0 8px
-
-
-
+#nav-holder.respond
+  position: fixed
+  z-index: 100
+  top: -10px
 
 
 
 @media only screen and (min-width: 768px)
+  .global-header
+    .NSWlogo
+      width: 50px
+      background-color: #00f
+
+
   .nav-holder
-    margin: 0 auto
     .row
+      min-height: $topbar-height-mob
       .columns
         padding: 0
         .title-area
           .name
             padding-left: 0.95em
+        section
+          ul.top-level
+            outline: 1px solid red
+            li
+              height: $topbar-height-mob
 
-@media screen and (max-device-width: 480px)
+
+@media only screen and (max-width: 768px)
+  .global-header
+    .NSWlogo
+      width: 50px
+      background-color: #fff
+    .rightside
+      a.logout
+        display: none!important
+    .f-dropdown
+      li.drop-logout
+        display: inline-block!important
+
+  .nav-holder
+    .row
+      min-height: $topbar-height-mob
+      nav.top-bar
+        section
+          ul.top-level
+            li
+              height: $topbar-height-mob
+
+
+
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)
   .global-header
     .NSWlogo
       width: 20px
       background-color: #f00
 
-  .orbit-bullets
-    li
-      width: 8px
-      height: 8px
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)
+  .global-header
+    .NSWlogo
+      width: 20px
+      background-color: #0f0
+
+
+
+
+
+
+
+
+
+
+
+

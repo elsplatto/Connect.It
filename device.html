@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Connect.IT</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Fjord+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/device.css" />
+    <script src="js/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+<div class="device-detection">
+    <div class="row">
+        <div id="device" class="large-12 columns">
+            <label>Device: </label>
+            <span class="phone">Standard Phone</span>
+            <span class="hd-phone">Retina/Hi Res Phone</span>
+            <span class="tablet">Tablet</span>
+            <span class="desktop">Desktop</span>
+
+        </div>
+        <div id="orientation" class="large-12 columns">
+            <label>Orientation: </label>
+            <span class="portrait">Portrait</span>
+            <span class="landscape">Landscape</span>
+        </div>
+        <div id="device-width">
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.write('<script src=' +
+            ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+            '.js><\/script>')
+</script>
+
+<script>
+$(document).ready(function(){
+   var screenWidth = $(window).width()
+   $('#device-width').html('<label>Screen Width: </label> ' + screenWidth)
+});
+</script>
+<!--
+
+<script src="js/foundation/foundation.js"></script>
+
+<script src="js/foundation/foundation.alerts.js"></script>
+
+<script src="js/foundation/foundation.clearing.js"></script>
+
+<script src="js/foundation/foundation.cookie.js"></script>
+
+<script src="js/foundation/foundation.dropdown.js"></script>
+
+<script src="js/foundation/foundation.forms.js"></script>
+
+<script src="js/foundation/foundation.joyride.js"></script>
+
+<script src="js/foundation/foundation.magellan.js"></script>
+
+
+
+<script src="js/foundation/foundation.reveal.js"></script>
+
+<script src="js/foundation/foundation.section.js"></script>
+
+<script src="js/foundation/foundation.tooltips.js"></script>
+
+<script src="js/foundation/foundation.topbar.js"></script>
+
+<script src="js/foundation/foundation.interchange.js"></script>
+
+<script src="js/foundation/foundation.placeholder.js"></script>
+
+-->
+
+<script>
+    $(document).foundation('topbar');
+    $(document).foundation('orbit', {
+        animation: 'fade',
+        timer_speed: 0,
+        pause_on_hover: true,
+        resume_on_mouseout: false,
+        animation_speed: 500,
+        stack_on_small: true,
+        navigation_arrows: false,
+        slide_number: false,
+        container_class: 'orbit-container',
+        stack_on_small_class: 'orbit-stack-on-small',
+        next_class: 'orbit-next',
+        prev_class: 'orbit-prev',
+        timer_container_class: 'orbit-timer',
+        timer_paused_class: 'paused',
+        timer_progress_class: 'orbit-progress',
+        slides_container_class: 'orbit-slides-container',
+        bullets_container_class: 'orbit-bullets',
+        bullets_active_class: 'active',
+        slide_number_class: 'orbit-slide-number',
+        caption_class: 'orbit-caption',
+        active_slide_class: 'active',
+        orbit_transition_class: 'orbit-transitioning',
+        bullets: true,
+        timer: false,
+        variable_height: false,
+        before_slide_change: function(){},
+        after_slide_change: function(){}
+    });
+</script>
+</body>
+</html>

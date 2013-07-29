@@ -39,7 +39,7 @@
   padding: 8px 15px 2px;
   margin-bottom: 0;
   color: white;
-  font-family: "Fjord One", serif;
+  font-family: "PMN Caecilia", serif;
   text-transform: none;
   font-weight: normal;
   font-size: 1.625em;
@@ -53,88 +53,225 @@
 .top-bar.expanded .title-area {
   background-color: white; }
 
-/*Orbit Classes */
-.orbit-container {
-  overflow: hidden;
-  background-color: red; }
-  .orbit-container .orbit-container {
-    background-color: rgba(255, 255, 255, 0.8); }
-  .orbit-container .orbit-slides-container {
-    height: auto; }
+.f-dropdown {
+  min-width: 250px;
+  border: 3px solid #e0e0e0;
+  border-radius: 5px;
+  z-index: 200;
+  height: auto !important; }
 
-.orbit-bullets {
-  clear: left;
-  float: left;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  left: 50%;
-  text-align: center;
-  top: 90%;
-  width: auto;
-  height: 20px;
-  overflow: visible; }
-
-.touch .orbit-bullets {
-  display: block; }
-
-.orbit-bullets li {
-  background: white;
-  border: 2px solid white;
-  opacity: 0.2;
+.f-dropdown:before {
+  content: "";
   display: block;
-  float: left;
-  list-style: none;
-  margin: 0 0 0 10px;
-  padding: 0;
-  position: relative;
-  right: 50%; }
-  .orbit-bullets li:first-child {
-    margin: 0; }
+  width: 0;
+  height: 0;
+  border: inset 15px;
+  border-color: transparent transparent white transparent;
+  border-bottom-style: solid;
+  position: absolute;
+  top: -29px;
+  left: 190px;
+  z-index: 199; }
 
-.orbit-bullets li.active {
-  opacity: 1;
-  background: white; }
+.f-dropdown:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 17px;
+  border-color: transparent transparent #e0e0e0 transparent;
+  border-bottom-style: solid;
+  position: absolute;
+  top: -35px;
+  left: 188px;
+  z-index: 198; }
 
 /* END: override foundation classes */
+/*START: Debug msg */
+.msg {
+  position: fixed;
+  z-index: 300;
+  background-color: #333333;
+  color: white;
+  border: 1px solid orange;
+  width: 300px;
+  height: auto; }
+
+#start-stop-msg {
+  top: 10px;
+  left: 10px; }
+
+#scroll-msg {
+  top: 10px;
+  left: 310px; }
+
+#direction-msg {
+  top: 10px;
+  left: 610px; }
+
+/*END: Debug msg */
 .global-header {
   background-color: #22252a;
   height: 50px;
   width: 100%;
   position: fixed;
-  z-index: 99; }
+  z-index: 200; }
   .global-header .NSWlogo {
     float: left;
     width: 124px;
-    height: 50px; }
-  .global-header .right {
     height: 50px;
-    width: auto; }
-    .global-header .right .profile {
-      width: auto; }
-    .global-header .right a, .global-header .right span {
-      display: table-cell;
-      vertical-align: middle;
-      height: inherit;
+    text-align: right; }
+  .global-header .rightside {
+    position: relative;
+    float: right;
+    height: 50px;
+    display: block;
+    text-align: right; }
+    .global-header .rightside .profile {
+      position: relative;
+      width: auto;
+      z-index: 500; }
+    .global-header .rightside .f-dropdown {
+      text-align: left; }
+      .global-header .rightside .f-dropdown li {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        padding: 10px 10px 10px 30px;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 0.9em;
+        color: #424b54;
+        cursor: default;
+        line-height: 1em; }
+        .global-header .rightside .f-dropdown li:hover {
+          background-color: inherit; }
+      .global-header .rightside .f-dropdown .title {
+        color: #212429;
+        padding: 10px; }
+      .global-header .rightside .f-dropdown a {
+        display: inline;
+        margin: 0;
+        padding: 0;
+        font-size: 0.9em;
+        color: #212429; }
+      .global-header .rightside .f-dropdown .underline {
+        text-decoration: underline; }
+      .global-header .rightside .f-dropdown span.time {
+        float: left;
+        color: #9c9fa4;
+        padding: 0;
+        margin: 0;
+        font-style: italic;
+        display: inline;
+        font-size: 0.8em;
+        line-height: 1.8em; }
+      .global-header .rightside .f-dropdown li.read {
+        background-color: white; }
+        .global-header .rightside .f-dropdown li.read:before {
+          content: "";
+          position: absolute;
+          top: 14px;
+          left: 7px;
+          width: 12px;
+          height: 12px;
+          z-index: 0;
+          background-image: url(img/icon-sprite.png);
+          background-position: 0px -12px; }
+      .global-header .rightside .f-dropdown li.unread {
+        background-color: #eeeff1; }
+        .global-header .rightside .f-dropdown li.unread:before {
+          content: "";
+          position: absolute;
+          top: 14px;
+          left: 7px;
+          width: 12px;
+          height: 12px;
+          z-index: 0;
+          background-image: url(img/icon-sprite.png);
+          background-position: 0px 0px; }
+      .global-header .rightside .f-dropdown li.see-all {
+        border-bottom: none;
+        text-align: center;
+        padding: 10px; }
+        .global-header .rightside .f-dropdown li.see-all a {
+          color: #60cdb0; }
+      .global-header .rightside .f-dropdown li.my-profile:before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 10px;
+        width: 16px;
+        height: 16px;
+        z-index: 0;
+        background-image: url(img/icon-sprite.png);
+        background-position: -14px 0px; }
+      .global-header .rightside .f-dropdown li.my-profile .badge {
+        top: 8px;
+        left: 220px;
+        height: 20px;
+        padding: 2px 4px; }
+      .global-header .rightside .f-dropdown li.drop-logout {
+        display: none;
+        font-style: normal;
+        text-decoration: none; }
+        .global-header .rightside .f-dropdown li.drop-logout:before {
+          content: "";
+          position: absolute;
+          top: 9px;
+          left: 10px;
+          width: 16px;
+          height: 16px;
+          z-index: 0;
+          background-image: url(img/icon-sprite.png);
+          background-position: -14px -18px; }
+    .global-header .rightside .notification {
+      position: relative;
+      background-color: #8a9096;
+      background-image: url(img/icon-notification.png);
+      background-repeat: no-repeat;
+      background-position: center 3px;
+      z-index: 500; }
+    .global-header .rightside .name {
+      padding-top: 18px; }
+    .global-header .rightside a, .global-header .rightside span {
+      display: inline-block;
+      height: auto;
       text-align: center;
-      font-size: 0.8em; }
-    .global-header .right span {
+      font-size: 0.8em;
+      position: relative; }
+    .global-header .rightside span {
       color: white;
       padding: 0 10px; }
-    .global-header .right .logout {
+    .global-header .rightside .logout {
       color: #929292;
       text-decoration: underline;
-      font-style: italic; }
-    .global-header .right .circle {
+      padding-top: 0px;
+      padding-left: 10px;
+      font-style: italic;
+      vertical-align: middle;
+      top: -10px; }
+    .global-header .rightside .circle {
       width: 30px;
       height: 30px;
       border: 1px solid transparent;
       border-radius: 16px;
-      margin: 0 0 0 10px;
-      display: block; }
-    .global-header .right .grey {
-      background-color: #555e67; }
+      margin: 10px 0 0 10px; }
+    .global-header .rightside .badge {
+      background-color: #e04e5b;
+      padding: 1px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      position: absolute;
+      top: -5px;
+      left: 20px;
+      display: block;
+      color: white;
+      height: 15px;
+      width: auto;
+      min-width: 15px;
+      display: block;
+      z-index: 100; }
 
 .banner-holder {
   position: relative;
@@ -289,48 +426,44 @@
                   border: none;
                   height: 1px; }
 
-.slider-holder {
-  width: 100%;
-  position: relative;
-  top: 50px;
-  height: auto;
-  text-align: center;
-  overflow: hidden; }
-  .slider-holder .orbit-container .use-it {
-    background-color: #994275; }
-  .slider-holder .orbit-container .fix-it {
-    background-color: #f8af50; }
-  .slider-holder .orbit-container .explore-it {
-    background-color: #e35d68; }
-  .slider-holder .orbit-container .share-it {
-    background-color: #1a7bc0; }
-  .slider-holder .orbit-container .about-it {
-    background-color: #6dd2b4; }
-  .slider-holder .orbit-container .grey {
-    background-color: #3f4851; }
-  .slider-holder .orbit-container li img {
-    margin: 0 auto; }
-  .slider-holder .orbit-timer .orbit-progress {
-    background-color: white; }
-  .slider-holder .orbit-timer span {
-    border-color: transparent white transparent white;
-    color: white; }
-  .slider-holder .orbit-timer .paused > span {
-    border-color: transparent transparent transparent white;
-    border-width: 0 0 0 8px; }
+#nav-holder.respond {
+  position: fixed;
+  z-index: 100;
+  top: -10px; }
 
 @media only screen and (min-width: 768px) {
-  .nav-holder {
-    margin: 0 auto; }
+  .global-header .NSWlogo {
+    width: 50px;
+    background-color: blue; }
+
+  .nav-holder .row {
+    min-height: 50px; }
     .nav-holder .row .columns {
       padding: 0; }
       .nav-holder .row .columns .title-area .name {
-        padding-left: 0.95em; } }
-@media screen and (max-device-width: 480px) {
+        padding-left: 0.95em; }
+      .nav-holder .row .columns section ul.top-level {
+        outline: 1px solid red; }
+        .nav-holder .row .columns section ul.top-level li {
+          height: 50px; } }
+@media only screen and (max-width: 768px) {
+  .global-header .NSWlogo {
+    width: 50px;
+    background-color: white; }
+  .global-header .rightside a.logout {
+    display: none !important; }
+  .global-header .f-dropdown li.drop-logout {
+    display: inline-block !important; }
+
+  .nav-holder .row {
+    min-height: 50px; }
+    .nav-holder .row nav.top-bar section ul.top-level li {
+      height: 50px; } }
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .global-header .NSWlogo {
     width: 20px;
-    background-color: red; }
-
-  .orbit-bullets li {
-    width: 8px;
-    height: 8px; } }
+    background-color: red; } }
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .global-header .NSWlogo {
+    width: 20px;
+    background-color: lime; } }

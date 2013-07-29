@@ -67,6 +67,8 @@
         }
         $list.append($item);
       });
+
+      //console.dir($list)
       return $list;
     },
 

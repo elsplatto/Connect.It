@@ -204,7 +204,7 @@
           background-position: -14px -18px; }
     .global-header .rightside .notification {
       position: relative;
-      background-color: #555e67;
+      background-color: #8a9096;
       background-image: url(img/icon-notification.png);
       background-repeat: no-repeat;
       background-position: center 3px;
@@ -404,10 +404,20 @@
                   height: 1px; }
 
 @media only screen and (min-width: 768px) {
-  .nav-holder .row .columns {
-    padding: 0; }
-    .nav-holder .row .columns .title-area .name {
-      padding-left: 0.95em; } }
+  .global-header .NSWlogo {
+    width: 50px;
+    background-color: blue; }
+
+  .nav-holder .row {
+    min-height: 50px; }
+    .nav-holder .row .columns {
+      padding: 0; }
+      .nav-holder .row .columns .title-area .name {
+        padding-left: 0.95em; }
+      .nav-holder .row .columns section ul.top-level {
+        outline: 1px solid red; }
+        .nav-holder .row .columns section ul.top-level li {
+          height: 50px; } }
 @media only screen and (max-width: 768px) {
   .global-header .NSWlogo {
     width: 50px;
@@ -415,4 +425,17 @@
   .global-header .rightside a.logout {
     display: none !important; }
   .global-header .f-dropdown li.drop-logout {
-    display: inline-block !important; } }
+    display: inline-block !important; }
+
+  .nav-holder .row {
+    min-height: 50px; }
+    .nav-holder .row nav.top-bar section ul.top-level li {
+      height: 50px; } }
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .global-header .NSWlogo {
+    width: 20px;
+    background-color: red; } }
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .global-header .NSWlogo {
+    width: 20px;
+    background-color: lime; } }

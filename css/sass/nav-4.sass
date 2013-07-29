@@ -1,5 +1,5 @@
 $header-bg: #22252a
-$circle-bg: #555e67
+$circle-bg: #8a9096
 $badge-color: #e04e5b
 
 $banner-height: 94px
@@ -21,6 +21,8 @@ $topbar-bg: #fff
 /* Height and margin */
 $topbar-height: 70px
 $topbar-list-item-height: 70px
+
+$topbar-height-mob: 50px
 
 /* Control Input height for top bar */
 $topbar-input-height: 2.45em
@@ -507,13 +509,26 @@ $drop-down-border-color: #e0e0e0
 
 
 @media only screen and (min-width: 768px)
+  .global-header
+    .NSWlogo
+      width: 50px
+      background-color: #00f
+
+
   .nav-holder
     .row
+      min-height: $topbar-height-mob
       .columns
         padding: 0
         .title-area
           .name
             padding-left: 0.95em
+        section
+          ul.top-level
+            outline: 1px solid red
+            li
+              height: $topbar-height-mob
+
 
 @media only screen and (max-width: 768px)
   .global-header
@@ -527,6 +542,28 @@ $drop-down-border-color: #e0e0e0
       li.drop-logout
         display: inline-block!important
 
+  .nav-holder
+    .row
+      min-height: $topbar-height-mob
+      nav.top-bar
+        section
+          ul.top-level
+            li
+              height: $topbar-height-mob
+
+
+
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)
+  .global-header
+    .NSWlogo
+      width: 20px
+      background-color: #f00
+
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)
+  .global-header
+    .NSWlogo
+      width: 20px
+      background-color: #0f0
 
 
 

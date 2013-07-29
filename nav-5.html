@@ -7,14 +7,22 @@
     <meta name="viewport" content="width=device-width" />
     <title>Connect.IT</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Fjord+One' rel='stylesheet' type='text/css'>
+    <!--link href='http://fonts.googleapis.com/css?family=Fjord+One' rel='stylesheet' type='text/css'-->
     <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/nav-4.css" />
+    <link rel="stylesheet" href="css/nav-5.css" />
     <script src="js/vendor/custom.modernizr.js"></script>
 
 </head>
 <body>
-<div class="global-header">
+
+<div id="start-stop-msg" class="msg"></div>
+
+<div id="scroll-msg" class="msg"></div>
+
+<div id="direction-msg" class="msg"></div>
+
+</div>
+<div id="global-header" class="global-header">
     <div class="row">
         <div class="large-12 columns">
             <div class="NSWlogo"></div>
@@ -27,13 +35,20 @@
                     <li class="read"><a href="#" class="underline">Photoshop CC</a> requires a license<br /><span class="time">Yesterday</span></li>
                     <li class="read"><a href="#" class="underline">Windows 8</a> requires a license<br /><span class="time">Yesterday</span></li>
                     <li class="read"><a href="#" class="underline">Windows 8</a> requires a license<br /><span class="time">Yesterday</span></li>
-                    <li class="see-all"><a href-"#">See all</a></li>
+                    <li class="see-all"><a href="#">See all</a></li>
                 </ul>
                 <a href="#" class="profile circle" style="background: url(media/img/profile-1.jpg) no-repeat center center;background-size: 30px 30px" data-dropdown="profile-drop"><span class="badge">5</span></a>
                 <ul id="profile-drop" class="f-dropdown" data-dropdown-content>
-                    <li class="title">Jason Taikato</li>
-                    <li class="my-profile"><a href="#">My Profile</a><span class="badge">5</span></li>
+
                     <li class="drop-logout"><a href="#">Logout</a></li>
+                    <li class="my-profile"><a href="#">My Profile</a></li>
+                    <li class="title">Subscriptions</li>
+                    <li class="unread"><a href="#">You need to approve an action</a><br /><span class="time">3 hours ago</span></li>
+                    <li class="unread"><a href="#">3 comments to moderate in</a> <a href="#" class="underline">How to connect to network</a><br /><span class="time">5 hours ago</span></li>
+                    <li class="read"><a href="#" class="underline">Photoshop CC</a> requires a license<br /><span class="time">Yesterday</span></li>
+                    <li class="read"><a href="#" class="underline">Windows 8</a> requires a license<br /><span class="time">Yesterday</span></li>
+                    <li class="read"><a href="#" class="underline">Windows 8</a> requires a license<br /><span class="time">Yesterday</span></li>
+                    <li class="see-all"><a href="#">See all</a></li>
                 </ul>
                 <!--span class="name">Jason Taikato</span-->
                 <a href="#" class="logout">Logout</a>
@@ -42,7 +57,7 @@
     </div>
 </div>
 
-<div class="banner-holder">
+<div id="banner-holder" class="banner-holder">
     <div class="row">
         <div class="large-12 columns">
             <h1 id="connect"><a href="#" title="Back to homepage">Connect.It</a></h1>
@@ -51,7 +66,7 @@
 </div>
 
 
-<div class="nav-holder">
+<div id="nav-holder" class="nav-holder">
     <div class="row">
         <div class="large-12 columns">
             <nav class="top-bar">
@@ -134,9 +149,26 @@
 
 </div>
 
-<div style="display:block; height: 1200px;"></div>
 
-
+<div class="row">
+    <div style="display:block; height: 1200px;">
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate tellus ac feugiat semper. Aliquam erat volutpat. Donec faucibus congue felis at consequat. Morbi blandit, urna eu scelerisque dapibus, eros dolor malesuada ante, a congue nisi turpis ut felis. Donec quis metus urna. Sed eget neque vitae metus condimentum condimentum sed sit amet libero. Morbi non consectetur augue.
+        </p>
+        <p>
+        Sed dignissim laoreet tortor, et rutrum enim ultrices eu. Aenean ultrices orci libero, in sodales augue tempus nec. Vestibulum hendrerit tellus in metus porta, nec hendrerit elit tempus. Nam vel orci lobortis, eleifend massa et, iaculis felis. Nunc enim dui, venenatis id tortor id, rutrum malesuada dolor. Vivamus ipsum mi, placerat at lorem nec, fermentum sagittis erat. Pellentesque nibh sem, aliquet non risus at, viverra pellentesque metus. Aenean commodo eget massa in condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel velit vitae dolor posuere lacinia sit amet molestie erat.
+        </p>
+        <p>
+        Proin semper malesuada ante, id lacinia orci sollicitudin id. Praesent aliquet vitae est vel aliquam. Fusce ut ultrices velit, at interdum ante. Donec id ornare sapien. Aenean ac rutrum mauris, nec placerat dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi sapien risus, tristique sed lorem a, lobortis ultrices felis. Suspendisse pulvinar non elit nec lobortis.
+        </p>
+        <p>
+        Cras lobortis porta massa a elementum. Suspendisse vitae tortor vel orci tincidunt egestas. Sed aliquam mi ligula, et elementum metus vehicula eu. Nullam eu rutrum metus, vel luctus arcu. Curabitur eget pulvinar velit. Curabitur blandit sapien id suscipit accumsan. Vivamus sed tincidunt ligula. Fusce interdum non tellus nec convallis. Pellentesque interdum diam arcu, id mattis ante interdum vitae. Duis lacinia euismod dui, ac bibendum elit sodales quis. In pulvinar et diam vel placerat. Aliquam sed gravida justo.
+        </p>
+        <p>
+        Nulla facilisi. Nam nec vestibulum dui. Suspendisse quis quam facilisis, sollicitudin urna a, euismod urna. Mauris dignissim bibendum interdum. Suspendisse imperdiet, nulla et facilisis sollicitudin, erat sapien pretium dui, a volutpat lectus felis eu massa. Phasellus gravida pretium tortor et consectetur. Etiam fermentum ornare tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec venenatis felis quam, pharetra vestibulum odio laoreet id. Praesent a leo lacinia, aliquet quam vel, interdum dui. Donec sem purus, dapibus pulvinar venenatis at, scelerisque vitae orci. Duis malesuada massa eros, a congue turpis mattis nec. Aliquam erat volutpat.
+        </p>
+    </div>
+</div>
 
 <script>
     document.write('<script src=' +
@@ -144,20 +176,100 @@
             '.js><\/script>')
 </script>
 
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/plugins/jquery/scroll-start-stop.js"></script>
+
 <script>
-    $(document).ready(function() {
-        var lastScrollTop = 0;
-        $(window).scroll(function(event){
-            var st = $(this).scrollTop();
-            if (st > lastScrollTop){
-                //console.log('downscroll');
-            } else {
-                // upscroll code
-                //console.log('upscroll');
-            }
-            lastScrollTop = st;
-        });
+$(document).ready(function() {
+    var startPos = 0;
+    var stopPos = 0;
+    var scrollDistance = 0;
+    var scrollDirection;
+    var scrollPos = 0;
+    var bannerHidden = false;
+
+    var bannerHolder = $('#banner-holder');
+    var navHolder = $('#nav-holder');
+    var globalHeader = $('#global-header');
+    var bannerHolderHeight = bannerHolder.height();
+    var navHolderHeight = navHolder.height();
+    var totalHeight = bannerHolderHeight + navHolderHeight;
+
+    var bannerHidden = false;
+    var navShowing = false;
+
+    $(window).bind('scrollstart', function() {
+        startPos = $(window).scrollTop();
+        $('#start-stop-msg').html('Start Pos: ' + startPos);
     });
+
+    $(window).bind('scrollstop', function(){
+        stopPos = $(window).scrollTop();
+        var mHTML = $('#start-stop-msg').html();
+        scrollDistance = stopPos - startPos;
+        $('#start-stop-msg').html(mHTML +  '<br \/>Stop Pos: ' + stopPos + '<br \/>Scroll Distance: ' + scrollDistance);
+        mHTML  = $('#start-stop-msg').html();
+
+        if (scrollDistance > 0)
+        {
+            scrollDirection = 'down';
+        }
+        else
+        {
+            scrollDirection = 'up';
+        }
+        $('#start-stop-msg').html(mHTML +  '<br \/>Scroll Direction: ' + scrollDirection + '<br \/>Window Height: ' + $(this).innerHeight());
+    });
+
+    $(window).scroll(function(event)
+    {
+        scrollPos = $(this).scrollTop();
+        $('#scroll-msg').html('Scroll Pos: ' + scrollPos);
+        if (startPos < 0)
+        {
+            //at top of page
+            startPos = 0;
+        }
+        if (startPos < scrollPos)
+        {
+            console.log('down')
+            //scrolling down
+            $('#direction-msg').text('down');
+            if (!bannerHidden && scrollPos >= totalHeight)
+            {
+                bannerHidden = true;
+            }
+
+            if (bannerHidden)
+            {
+                if (navShowing)
+                {
+                    //hide nav
+                    navHolder.animate({top:'-22px'}, 800);
+                    navShowing = false;
+                }
+            }
+        }
+        else
+        {
+            //scrolling up
+            $('#direction-msg').text('up');
+            console.log('up')
+
+            if (bannerHidden)
+            {
+                bannerHolder.hide();
+                navHolder.addClass('respond');
+                if (!navShowing)
+                {
+                    navHolder.animate({top:'50px'}, 800);
+                    navShowing = true;
+                }
+            }
+        }
+    });
+
+});
 </script>
 
 <script src="js/foundation.min.js"></script>
