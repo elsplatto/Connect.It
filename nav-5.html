@@ -15,19 +15,7 @@
 </head>
 <body>
 
-<div id="start-stop-msg" class="msg"></div>
 
-<div id="scroll-msg" class="msg"></div>
-
-<div id="direction-msg" class="msg"></div>
-
-<div id="nav-msg" class="msg"></div>
-
-<div id="diff-msg" class="msg"></div>
-
-<div id="nav-pad-msg" class="msg"></div>
-
-</div>
 <div id="global-header" class="global-header">
     <div class="row">
         <div class="large-12 columns">
@@ -188,7 +176,7 @@
 <script src="js/vendor/plugins/jquery/scroll-start-stop.js"></script>
 
 <script>
-$(document).ready(function() {
+$(function() {
     var startPos = 0;
     var stopPos = 0;
     var scrollDistance = 0;
@@ -200,15 +188,29 @@ $(document).ready(function() {
     var navHolder = $('#nav-holder');
     var globalHeader = $('#global-header');
     var navPad = $('#nav-pad');
-    var navPadTopOffset = navPad.offset().top - $(window).scrollTop();
+    var navPadTopOffset = navPad.offset().top - $(document).scrollTop();
+    var navHolderTopOffset = navHolder.offset().top;
     var bannerHolderHeight = bannerHolder.height();
     var navHolderHeight = navHolder.height();
     var bannerNavHeight = bannerHolderHeight + navHolderHeight;
+    //navHolder.css({'top':'50px'});
+
+    console.log('navPadTopOffset: ['+navPad.offset().top +']\nnavPadTopPosition: ['+navPad.position().top +']\nnavHolderTopOffset: ['+navHolderTopOffset +']\n$(document).scrollTop(): ['+$(document).scrollTop()+']\n$(window).scrollTop(): ['+$(window).scrollTop()+']\nbannerNavHeight: ['+bannerNavHeight+']');
+
 
     var bannerHidden = false;
-    var navShowing = false;
+    var navShowing = true;
 
-
+    var debug = false;
+    var debugHTML = '<div id="start-stop-msg" class="msg"></div>'
+    debugHTML += '<div id="scroll-msg" class="msg"></div>'
+    debugHTML += '<div id="direction-msg" class="msg"></div>'
+    debugHTML += '<div id="nav-msg" class="msg"></div>'
+    debugHTML += '<div id="diff-msg" class="msg"></div>'
+    debugHTML += '<div id="nav-pad-msg" class="msg"></div>'
+    if (debug) {
+     $('body').prepend(debugHTML)
+    }
 
     $(window).bind('scrollstart', function() {
         startPos = $(window).scrollTop();
@@ -235,36 +237,67 @@ $(document).ready(function() {
 
     $(window).scroll(function(event)
     {
+
         var mHTML = $('#start-stop-msg').html();
         scrollPos = $(this).scrollTop();
         navPadTopOffset = navPad.offset().top - scrollPos;
-        $('#nav-pad-msg').text(navPadTopOffset)
-        $('#scroll-msg').html('Scroll Pos: ' + scrollPos);
-        console.log('scrollPos: ['+scrollPos+'] navPadTopOffset: ['+navPadTopOffset+']');
+        navHolderTopOffset = navHolder.offset().top;
 
-        if ((scrollPos < bannerNavHeight))
+
+
+
+        if (startPos > scrollPos)
         {
+            console.log('scrolling up');
+        }
+        else
+        {
+            console.log('scrolling downer');
+            //console.log('navPadTopOffset: ['+navPad.offset().top +']\nnavPadTopPosition: ['+navPad.position().top +']\nnavHolderTopOffset: ['+navHolderTopOffset +']\n$(document).scrollTop(): ['+$(document).scrollTop()+']\n$(window).scrollTop(): ['+$(window).scrollTop()+']\nbannerNavHeight: ['+bannerNavHeight+']');
+            console.log('navShowing: ['+navShowing+']\nstartPos: ['+startPos+']\nscrollPos: ['+scrollPos+']\ndifference: ['+difference(startPos,scrollPos)+']\nscrollPos: ['+scrollPos+']\nbannerNavHeight: ['+bannerNavHeight+']');
+        }
+
+        if (debug)
+        {
+            $('#nav-pad-msg').text(navPadTopOffset);
+            $('#scroll-msg').html('Scroll Pos: ' + scrollPos);
+            console.log('scrollPos: ['+scrollPos+'] navPadTopOffset: ['+navPadTopOffset+']');
+        }
+
+        if ((navPadTopOffset >= (navHolderTopOffset - bannerNavHeight)))
+        {
+            //scrolling up --> stick nav to nav pad
             navHolder.stop();
+            console.log('navPadTopOffset: ['+navPadTopOffset+'] navHolderTopOffset: ['+navHolderTopOffset+']');
+            console.log('animation stopped')
             if (scrollPos <= 0) {
                 navPadTopOffset = navPadTopOffset + scrollPos;
             }
             navHolder.css({'top':navPadTopOffset+'px'});
         }
-        else if (!navShowing && (startPos > scrollPos) && (difference(startPos,scrollPos) > 10) && (scrollPos > 0) && (scrollPos > bannerNavHeight))
+        else if (!navShowing && (startPos > scrollPos) && (difference(startPos,scrollPos) > 5) && (scrollPos > 0) && (scrollPos > bannerNavHeight))
         {
+
             //scrolling up
             showNav();
-            $('#nav-msg').html('Nav Showing: ' + navShowing);
-            $('#diff-msg').html('Diff: ' + difference(startPos,scrollPos));
-            $('#direction-msg').text('up');
+            if (debug)
+            {
+                $('#nav-msg').html('Nav Showing: ' + navShowing);
+                $('#diff-msg').html('Diff: ' + difference(startPos,scrollPos));
+                $('#direction-msg').text('up');
+            }
         }
-        else if (navShowing && (startPos < scrollPos) && (difference(startPos,scrollPos) > 10) && (scrollPos > bannerNavHeight))
+        else if ((navShowing && (startPos < scrollPos) && (difference(startPos,scrollPos) > 5) && (scrollPos > bannerNavHeight)) || (navShowing && (startPos == scrollPos) && (scrollPos > bannerNavHeight)))
         {
+
             //scrolling down
             hideNav();
-            $('#nav-msg').html('Nav Showing: ' + navShowing);
-            $('#diff-msg').html('Diff: ' + difference(startPos,scrollPos));
-            $('#direction-msg').text('down');
+            if (debug)
+            {
+                $('#nav-msg').html('Nav Showing: ' + navShowing);
+                $('#diff-msg').html('Diff: ' + difference(startPos,scrollPos));
+                $('#direction-msg').text('down');
+            }
         }
 
 
@@ -276,7 +309,10 @@ $(document).ready(function() {
 
     function showNav()
     {
-        console.log('showNav triggered')
+        if (debug)
+        {
+            console.log('showNav triggered');
+        }
         if (!navHolder.hasClass('respond'))
         {
             navHolder.addClass('respond');
@@ -287,7 +323,10 @@ $(document).ready(function() {
 
     function hideNav()
     {
-        console.log('hide triggered')
+        if (debug)
+        {
+            console.log('hide triggered');
+        }
         if (navHolder.hasClass('respond'))
         {
             navHolder.remove('respond');
