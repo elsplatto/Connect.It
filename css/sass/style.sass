@@ -1,8 +1,102 @@
 $header-bg: #22252a
-$downy-green: #60cdae
+$circle-bg: #8a9096
+$badge-color: #e04e5b
+$support-area-bg: #eeeff1
 
+$banner-height: 144px
+
+$use-it-nav-bg: #994275
+$fix-it-nav-bg: #f19d19
+$explore-it-nav-bg: #e35d68
+$share-it-nav-bg: #1a7bc0
+$about-it-nav-bg: #60cdaf
+$grey-bg: #3f4851
+$dark-grey-bg: #424a53
+
+$button-blue: #1a7bc0
+$button-blue-drop-shadow: #095389
+$button-green: #60cdaf
+$button-green-drop-shadow: #2b9477
+$light-grey-border: #cacdd1
+
+$serif-font-family: 'PMN Caecilia', serif
+$gothic-font-family: 'Gotham'
+$body-font-family: 'Whitney HTF', 'Helvetica Neue'
+$std-font-color: #454d54
+
+
+/* Background color for the top bar */
+$topbar-bg: #fff
+
+/* Height and margin */
+$topbar-height: 70px
+$topbar-list-item-height: 70px
+
+$topbar-height-mob: 50px
+
+/* Control Input height for top bar */
+$topbar-input-height: 2.45em
+
+/* Controlling the styles for the title in the top bar */
+$topbar-title-weight: bold
+$topbar-title-font-size: 1.5em
+
+$topbar-nav-border-color: #e0e0e2
+
+/* Style the top bar dropdown elements */
+$topbar-dropdown-bg: #222
+$topbar-dropdown-link-color: #fff
+
+/* Set the link colors and styles for top-level nav */
+$topbar-link-color: #434a52
+$topbar-link-color-hover: #fff
+$topbar-link-color-active: #fff
+$topbar-link-weight: normal
+$topbar-link-font-size: 1em
+$topbar-link-bg-hover: #565e69
+$topbar-link-padding: 0.65em 1em 0.5em!important
+$topbar-link-second-level-padding: 2em 3em!important
+$topbar-link-second-level-first-child-padding: 2em 3em 2em 1em!important
+
+$topbar-dropdown-label-color: #555
+$topbar-dropdown-label-text-transform: uppercase
+$topbar-dropdown-label-font-weight: bold
+$topbar-dropdown-h2-font-size: emCalc(10)
+
+/* Top menu icon styles */
+$topbar-menu-link-transform: uppercase
+$topbar-menu-link-font-size: emCalc(13)
+$topbar-menu-link-weight: bold
+$topbar-menu-link-color: #fff
+$topbar-menu-icon-color: #fff
+$topbar-menu-link-color-toggled: #888
+$topbar-menu-icon-color-toggled: #888
+
+/* Transitions and breakpoint styles */
+$topbar-transition-speed: 300ms
+$topbar-breakpoint: emCalc(940) /* Change to 9999px for always mobile layout */
+$topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")"
+
+/* Divider Styles */
+$topbar-divider-border-bottom: solid 1px lighten($topbar-bg, 10%)
+$topbar-divider-border-top: solid 1px darken($topbar-bg, 10%)
+
+/* Sticky Class */
+$topbar-sticky-class: ".sticky"
+
+
+$drop-down-border-color: #e0e0e0
 
 /* START: override foundation classes */
+
+body
+  font-family: $body-font-family
+
+h1, h2, h3
+  font-family: $serif-font-family
+h2
+  font-size: 1.875em
+  font-weight: 400
 
 .row
   max-width: 60em
@@ -11,64 +105,862 @@ $downy-green: #60cdae
   padding-left: 1.125em
   padding-right: 1.125em
 
-.large-1
-  height: 1200px
-  outline: 1px solid red
+.top-bar-section .has-dropdown > a:after
+  border: none
+
+.top-bar-section .has-dropdown > a
+  padding: $topbar-link-padding
+
+.top-bar .toggle-topbar.menu-icon a
+  width: auto
+
+.top-bar-section ul.right li .dropdown
+  width: 100%
+
+/*START: Buttons*/
+
+button, .button
+  font-family: $gothic-font-family
+  color: #fff
+  background-color: $button-blue
+  border: 3px solid transparent
+  border-radius: 3px
+  box-shadow: 0 3px 0 $button-blue-drop-shadow
+
+button.green, .button.green
+  background-color: $button-green
+  box-shadow: 0 3px 0 $button-green-drop-shadow
+
+button.small, .button.small
+  font-weight: normal
 
 
+
+/*END: Buttons*/
+
+/*START: Input Fields*/
+
+textarea
+  border: 1px solid $light-grey-border
+  border-radius: 3px
+  background-color: #fff
+
+input[type='text'],
+input[type='password'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url']
+  @extend textarea
+  height: 3.2em
+  box-shadow: none
+  -webkit-box-shadow: none
+  -moz-box-shadow: none
+  font:
+    family: $gothic-font-family
+    size: 1em
+
+/*END: Input Fields*/
+
+@media only screen and (min-width: 58.75em)
+  .nav-holder .large-12,
+  .nav-holder .columns,
+  .nav-holder .top-bar,
+  .nav-holder .top-bar-section,
+  .top-bar-section .has-dropdown
+    position: static
+
+
+.top-bar-section .dropdown li h2
+  padding: 8px 15px 2px
+  margin-bottom: 0
+  color: #fff
+  font-family: $serif-font-family
+  text-transform: none
+  font-weight: normal
+  font-size: 1.625em
+  background-color: transparent
+
+.top-bar .toggle-topbar.menu-icon a span
+  -webkit-box-shadow: 0 10px 0 1px $topbar-link-color, 0 16px 0 1px $topbar-link-color, 0 22px 0 1px $topbar-link-color
+  box-shadow: 0 10px 0 1px $topbar-link-color, 0 16px 0 1px $topbar-link-color, 0 22px 0 1px $topbar-link-color
+  color: $topbar-link-color
+
+.top-bar.expanded .title-area
+  background-color: #fff
+
+.f-dropdown
+  min-width: 250px
+  border: 3px solid #e0e0e0
+  border-radius: 5px
+  z-index: 200
+  height: auto!important
+
+.f-dropdown:before
+  content: ""
+  display: block
+  width: 0
+  height: 0
+  border: inset 15px
+  border-color: transparent transparent white transparent
+  border-bottom-style: solid
+  position: absolute
+  top: -29px
+  left: 190px
+  z-index: 199
+
+.f-dropdown:after
+  content: ""
+  display: block
+  width: 0
+  height: 0
+  border: inset 17px
+  border-color: transparent transparent $drop-down-border-color transparent
+  border-bottom-style: solid
+  position: absolute
+  top: -35px
+  left: 188px
+  z-index: 198
+
+
+/*START: Orbit Classes*/
+
+.orbit-container
+  overflow: hidden
+  background-color: #f00
+  .orbit-container
+    background-color: rgba(255,255,255,0.8)
+  .orbit-slides-container
+    height: auto
+
+.orbit-bullets
+  clear: left
+  float: left
+  list-style: none
+  margin: 0
+  padding: 0
+  position: absolute
+  left: 50%
+  text-align: center
+  top: 90%
+  width: auto
+  height: 20px
+  overflow: visible
+
+.touch
+  .orbit-bullets
+    display: block
+
+.orbit-bullets li
+  background: #fff
+  border: 2px solid #fff
+  opacity: 0.2
+  display: block
+  float: left
+  list-style: none
+  margin: 0 0 0 10px
+  padding: 0
+  position: relative
+  right: 50%
+  &:first-child
+    margin: 0
+
+.orbit-bullets li.active
+  opacity: 1
+  background: #fff
+
+/*END: Orbit Classes*/
 
 /* END: override foundation classes */
+
+/*START: Debug msg*/
+
+.msg
+  position: fixed
+  z-index: 300
+  background-color: #333
+  color: #fff
+  border: 1px solid orange
+  width: 300px
+  height: auto
+
+#start-stop-msg
+  top: 10px
+  left: 10px
+
+#scroll-msg
+  top: 10px
+  left: 310px
+
+#direction-msg
+  top: 10px
+  left: 610px
+
+#nav-msg
+  top: 10px
+  left: 910px
+
+
+#diff-msg
+  top: 100px
+  left: 910px
+
+#nav-pad-msg
+  top: 100px
+  left: 610px
+
+/*END: Debug msg*/
 
 .global-header
   background-color: $header-bg
   height: 50px
-  width: auto
-  .logo
+  width: 100%
+  position: fixed
+  z-index: 200
+  .NSWlogo
     float: left
     width: 124px
     height: 50px
-
-  .right
+    text-align: right
+    background: url(img/dec-logo.png) no-repeat center left
+  .rightside
+    position: relative
+    float: right
     height: 50px
-    width: auto
-  a
-    display: table-cell
-    vertical-align: middle
-    width: 30px
-    height: inherit
-    text-align: center
-  .circle
-    width: 30px
-    height: 30px
-    border: 1px solid transparent
-    border-radius: 16px
+    display: block
+    text-align: right
+    .profile
+      position: relative
+      width: auto
+      z-index: 500
+
+    .f-dropdown
+      text-align: left
+      li
+        position: relative
+        display: inline-block
+        width: 100%
+        height: auto
+        padding: 10px 10px 10px 30px
+        border-bottom: 1px solid $drop-down-border-color
+        font-size: 0.9em
+        color: #424b54
+        cursor: default
+        line-height: 1em
+        &:hover
+          background-color: inherit
+      .title
+        color: #212429
+        padding: 10px
+
+      a
+        display: inline
+        margin: 0
+        padding: 0
+        font-size: 0.9em
+        color: #212429
+      .underline
+        text-decoration: underline
+      span.time
+        float: left
+        color: #9c9fa4
+        padding: 0
+        margin: 0
+        font-style: italic
+        display: inline
+        font-size: 0.8em
+        line-height: 1.8em
+
+      li.read
+        background-color: #fff
+        &:before
+          content: ''
+          position: absolute
+          top: 14px
+          left: 7px
+          width: 12px
+          height: 12px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: 0px -12px
+      li.unread
+        background-color: #eeeff1
+        &:before
+          content: ''
+          position: absolute
+          top: 14px
+          left: 7px
+          width: 12px
+          height: 12px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: 0px 0px
+      li.see-all
+        border-bottom: none
+        text-align: center
+        padding: 10px
+        a
+          color: #60cdb0
+      li.my-profile
+        &:before
+          content: ''
+          position: absolute
+          top: 9px
+          left: 10px
+          width: 16px
+          height: 16px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: -14px 0px
+        .badge
+          top: 8px
+          left: 220px
+          height: 20px
+          padding: 2px 4px
+      li.drop-logout
+        display: none
+        font-style: normal
+        text-decoration: none
+        &:before
+          content: ''
+          position: absolute
+          top: 9px
+          left: 10px
+          width: 16px
+          height: 16px
+          z-index: 0
+          background-image: url(img/icon-sprite.png)
+          background-position: -14px -18px
+
+
+
+
+    .notification
+      position: relative
+      background-color: $circle-bg
+      z-index: 500
+      &:before
+        content: ''
+        position: absolute
+        top: 1px
+        left: 2px
+        width: 21px
+        height: 20px
+        z-index: 0
+        background-image: url(img/icon-sprite.png)
+        background-position: -30px -16px
+    .notification.alert
+      border: 2px solid #e14d5b
+      background-color: #222529
+      &:before
+        background-position: -33px 0px
+        width: 17px
+        height: 16px
+        top: 4px
+        left: 4px
+
+    .name
+      padding-top: 18px
+    a, span
+      display: inline-block
+      height: auto
+      text-align: center
+      font-size: 0.8em
+      position: relative
+
+    span
+      color: #fff
+      padding: 0 10px
+    .logout
+      color: #929292
+      text-decoration: underline
+      padding-top: 0px
+      padding-left: 10px
+      font-style: italic
+      vertical-align: middle
+      top: -10px
+    .circle
+      width: 29px
+      height: 29px
+      border: 2px solid transparent
+      border-radius: 16px
+      margin: 10px 0 0 10px
+
+    .badge
+      background-color: $badge-color
+      padding: 1px
+      border: 1px solid transparent
+      border-radius: 2px
+      position: absolute
+      top: -5px
+      left: 20px
+      display: block
+      color: #fff
+      height: 15px
+      width: auto
+      min-width: 15px
+      display: block
+      z-index: 100
 
 
 
 .banner-holder
-  height: 9.063em
-  background-color: $downy-green
-  border-bottom: 1px solid #82e6ca
+  position: relative
+  width: 100%
+  height: $banner-height
+  background-color: #fff
+  padding-top: 50px
+  .row
+    width: 100%
+    .large-12
+      width: 100%
+      text-align: center
+      height: auto
+      position: relative
+      display: table-cell
+      h1
+        vertical-align: middle
+        height: 34px
+        width: 277px
+        margin: 30px auto
+        padding: 0
+        background: url(img/logo.png) no-repeat
+        a
+          height: 34px
+          width: 277px
+          text-indent: -10000px
+          display: block
+
+#nav-pad
+  height: 71px
+  position: relative
+  display: none
+  background-color: #f00
+  .respond
+    display: block
+
 
 .nav-holder
+  font-family: $gothic-font-family
+  position: relative
+  z-index: 100
   width: 100%
   height: auto
-  background-color: $downy-green
-  nav.top-bar
-    background-color: transparent
+  background-color: $topbar-bg
+  border-top: 1px solid $topbar-nav-border-color
+  /*box-shadow: 0px 10px 5px rgba(140,140,140,0.6)*/
+  .row
+    height: auto
+    min-height: $topbar-height
+    nav.top-bar
+      background-color: transparent
+      margin: 0
+
+      section
+        height: auto
+        ul.top-level
+          width: 100%
+          height: auto
+          background-color: $topbar-bg
+          li
+            height: $topbar-height
+            background-color: $topbar-bg
+            width: 18.73%
+            padding: 0
+            border-style: solid
+            border-color: $topbar-nav-border-color
+            border-width: 0 1px 0 0
+            text-align: center
+            a
+              font-weight: bold
+              height: $topbar-height
+              color: $topbar-link-color
+              text-align: center
+            &:hover
+              a
+                color: #fff
+          li.search
+            position: relative
+            width: 4.762%
+            border-width: 0px
+            a
+              text-indent: -10000px
+              &:before
+                content: ''
+                position: absolute
+                top: 20px
+                left: 14px
+                width: 22px
+                height: 22px
+                z-index: 0
+                background-image: url(img/icon-sprite.png)
+                background-position: -54px 0px
+
+          @media only screen and (min-width: 58.75em)
+            .has-dropdown
+              &:hover
+                ul
+                  display: block
+              ul
+                display: none
+
+          #use-it
+            &:hover
+              border-bottom: 3px solid $use-it-nav-bg
+              background-color: $use-it-nav-bg
+              .dropdown
+                background-color: $use-it-nav-bg
+                li
+                  background-color: inherit
+          #fix-it
+            &:hover
+              border-bottom: 3px solid $fix-it-nav-bg
+              background-color: $fix-it-nav-bg
+              .dropdown
+                background-color: $fix-it-nav-bg
+                li
+                  background-color: inherit
+          #explore-it
+            &:hover
+              border-bottom: 3px solid $explore-it-nav-bg
+              background-color: $explore-it-nav-bg
+              .dropdown
+                background-color: $explore-it-nav-bg
+                li
+                  background-color: inherit
+          #share-it
+            &:hover
+              border-bottom: 3px solid $share-it-nav-bg
+              background-color: $share-it-nav-bg
+              .dropdown
+                background-color: $share-it-nav-bg
+                li
+                  background-color: inherit
+          #about-it
+            &:hover
+              border-bottom: 3px solid $about-it-nav-bg
+              background-color: $about-it-nav-bg
+              .dropdown
+                background-color: $about-it-nav-bg
+                li
+                  background-color: inherit
+
+          a
+            background-color: transparent
+            font-size: $topbar-link-font-size
+            font-weight: $topbar-link-weight
+            padding: $topbar-link-padding
+          li
+            ul
+              height: auto
+              ul
+                height: auto!important
+                width: 100%
+                margin: 0 auto
+                max-width: 60em
+                float: none
+                clear: both
+                background-color: transparent
+                li
+                  background-color: transparent
+                  float: left
+                  height: auto
+                  width: auto
+                  border: none
+                  text-align: center
+
+                  a
+                    padding: $topbar-link-second-level-padding
+                    text-transform: none
+                    height: auto
+                    &:hover
+                      background-color: rgba(255,255,255, 0.2)
+
+              .label-holder
+                height: auto
+                margin: 0 auto
+                min-width: 60em
+                float: none
+                clear: both
+                border: none
+                h2
+                  display: block
+                  padding: 30px 0 0 0
+                  hr
+                    margin: 30px 0 0 0
+                    padding: 0
+                    background-color: #fff
+                    opacity: 0.2
+                    border: none
+                    height: 1px
+#nav-holder.respond
+  position: fixed
+  top: 50px
+  border-bottom: 2px solid $light-grey-border
+
+
+.feature-holder
+  width: 100%
+  position: relative
+  height: auto
+  text-align: center
+  overflow: hidden
+  .orbit-container
+    .use-it
+      background-color: $use-it-nav-bg
+    .fix-it
+      background-color: $fix-it-nav-bg
+    .explore-it
+      background-color: $explore-it-nav-bg
+    .share-it
+      background-color: $share-it-nav-bg
+    .about-it
+      background-color: $about-it-nav-bg
+    .grey
+      background-color: $grey-bg
+    li
+      img
+        margin: 0 auto
+  .orbit-timer
+    .orbit-progress
+      background-color: #fff
+    span
+      border-color: transparent #fff transparent #fff
+      color: #fff
+    .paused
+      > span
+        border-color: transparent transparent transparent #fff
+        border-width: 0 0 0 8px
+
+
+.support-area
+  background-color: $support-area-bg
+  padding: 36px 0 25px
+  .search
+    label
+      display: none
+    input[type="search"]
+      width: 88%
+      border-top-right-radius: 0px
+      border-bottom-right-radius: 0px
+      border-right-width: 0px
+      float: left
+    a
+      position: relative
+      float: left
+      height: 3.2em
+      width: 12%
+      border: 1px solid $light-grey-border
+      border-left-width: 0px
+      border-bottom-right-radius: 3px
+      border-top-right-radius: 3px
+      border-top-left-radius: 0px
+      border-bottom-left-radius: 0px
+      background-color: #fff
+      &:before
+        content: ''
+        position: absolute
+        top: 14px
+        left: 14px
+        width: 22px
+        height: 22px
+        z-index: 0
+        background-image: url(img/icon-sprite.png)
+        background-position: -54px 0px
+  p
+    font:
+      size: 1.2em
+      family: $gothic-font-family
+      weight: 300
     margin: 0
-    ul.title-area
+
+  button, .button
+    width: 100%
+
+.use-it.support-area
+  .search
+    a
+      border-color: $use-it-nav-bg
+      background-color: $use-it-nav-bg
+      &:before
+        background-position: -54px -23px
+.fix-it.support-area
+  .search
+    a
+      border-color: $fix-it-nav-bg
+      background-color: $fix-it-nav-bg
+      &:before
+        background-position: -54px -23px
+.explore-it.support-area
+  .search
+    a
+      border-color: $explore-it-nav-bg
+      background-color: $explore-it-nav-bg
+      &:before
+        background-position: -54px -23px
+.share-it.support-area
+  .search
+    a
+      border-color: $share-it-nav-bg
+      background-color: $share-it-nav-bg
+      &:before
+        background-position: -54px -23px
+.about-it.support-area
+  .search
+    a
+      border-color: $about-it-nav-bg
+      background-color: $about-it-nav-bg
+      &:before
+        background-position: -54px -23px
+
+
+
+.whats-new
+  background-color: #fff
+  padding: 45px 0
+  h2
+    padding: 0
+    margin: 0 0 32px 0
+  ul
+    width: 100%
+    height: auto
+    list-style: none
+    text-align: left
+    padding: 0
+    margin: 0 0 35px 0
+    li
+      position: relative
+      display: block
       width: 100%
       height: auto
-      padding: 0
-      margin: 0
-      list-style-type: none
-      li
-        display: list-item
-        a
-          color: #fff
-          font-size: 1.5em
+      padding: 15px 0
+      overflow: hidden
+      border:
+        color: $light-grey-border
+        width: 0 0 1px 0
+        style: solid
+      &:first-child
+        border-width: 1px 0
+      .circle
+        width: 3.75em
+        height: 3.75em
+        border: 1px solid transparent
+        border-radius: 2em
+      div
+        float: left
+        clear: left
+        margin: 0 20px 0 0
+        display: inline-block
+      .use-it
+        background-color: $use-it-nav-bg
+      .fix-it
+        background-color: $fix-it-nav-bg
+      .explore-it
+        background-color: $explore-it-nav-bg
+      .share-it
+        background-color: $share-it-nav-bg
+      .about-it
+        background-color: $about-it-nav-bg
+
+      .holder
+        clear: none
+        margin: 0
+        width: 91%
+        p
+          width: 100%
+          position: relative
+          padding: 5px 0 0 0
+          margin: 0
           display: block
+          float: left
+          clear: right
+          color: $std-font-color
+          font:
+            family: $gothic-font-family
+            size: 1em
+          a
+            color: inherit
+            text-decoration: underline
+            font:
+              family: inherit
+              size: inherit
+        p.cite
+          position: relative
+          float: left
+          clear: right
+          color: #8a9096
+          font:
+            size: 0.8em
+            family: $body-font-family
+          a
+            position: relative
+            text-decoration: underline
+            display: inline
+            color: #8a9096
+
+
+.inspire-holder
+  width: 100%
+  position: relative
+  height: auto
+  text-align: center
+  overflow: hidden
+
+
+
+@media only screen and (min-width: 768px)
+
+
+  .nav-holder
+    .row
+      min-height: $topbar-height-mob
+      .columns
+        padding: 0
+        .title-area
+          .name
+            padding-left: 0.95em
+        section
+          ul.top-level
+            li
+              height: $topbar-height-mob
+
+
+@media only screen and (max-width: 768px)
+  .global-header
+    .NSWlogo
+      width: 50px
+      background-color: #fff
+    .rightside
+      a.logout
+        display: none!important
+    .f-dropdown
+      li.drop-logout
+        display: inline-block!important
+
+  .nav-holder
+    .row
+      min-height: $topbar-height-mob
+      nav.top-bar
+        section
+          ul.top-level
+            li
+              height: $topbar-height-mob
+
+  #nav-pad
+    height: 50px
+
+  .orbit-bullets
+    li
+      width: 8px
+      height: 8px
+
 
 
 

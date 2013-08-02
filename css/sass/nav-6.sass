@@ -2,7 +2,7 @@ $header-bg: #22252a
 $circle-bg: #8a9096
 $badge-color: #e04e5b
 
-$banner-height: 94px
+$banner-height: 144px
 
 
 
@@ -160,9 +160,6 @@ $drop-down-border-color: #e0e0e0
   left: 188px
   z-index: 198
 
-
-
-
 /* END: override foundation classes */
 
 /*START: Debug msg*/
@@ -175,6 +172,12 @@ $drop-down-border-color: #e0e0e0
   border: 1px solid orange
   width: 300px
   height: auto
+
+.touch .msg
+  width: 100
+
+.touch #scroll-msg
+  left: 10px
 
 #start-stop-msg
   top: 10px
@@ -380,16 +383,16 @@ $drop-down-border-color: #e0e0e0
 
 .banner-holder
   position: relative
-  top: 50px
   width: 100%
   height: $banner-height
   background-color: #fff
+  padding-top: 50px
   .row
     width: 100%
     .large-12
       width: 100%
       text-align: center
-      height: $banner-height
+      height: auto
       position: relative
       display: table-cell
       h1
@@ -408,19 +411,20 @@ $drop-down-border-color: #e0e0e0
 #nav-pad
   height: 71px
   position: relative
-  display: block
-  top: 50px
+  display: none
   background-color: #f00
+  .respond
+    display: block
 
 
 .nav-holder
-  position: fixed
+  position: relative
   z-index: 100
-  top: 144px
   width: 100%
   height: auto
   background-color: $topbar-bg
   border-top: 1px solid $topbar-nav-border-color
+  /*box-shadow: 0px 3px 25px #333*/
   .row
     height: auto
     min-height: $topbar-height
@@ -554,7 +558,8 @@ $drop-down-border-color: #e0e0e0
                     border: none
                     height: 1px
 #nav-holder.respond
-  top: -22px
+  position: fixed
+  top: 50px
 
 
 
