@@ -10,6 +10,8 @@ $fix-it-nav-bg: #f19d19
 $explore-it-nav-bg: #e35d68
 $share-it-nav-bg: #1a7bc0
 $about-it-nav-bg: #60cdaf
+
+$light-grey-bg: #eeeff1
 $grey-bg: #3f4851
 $dark-grey-bg: #424a53
 
@@ -328,6 +330,9 @@ input[type='url']
 /*END: Debug msg*/
 
 /*START: General usage classes*/
+
+.light-grey
+  background-color: $light-grey-bg
 .dark-grey
   background-color: $dark-grey-bg
   h1, h2, h3
@@ -907,7 +912,6 @@ input[type='url']
             size: 1em
           a
             color: inherit
-            text-decoration: underline
             font:
               family: inherit
               size: inherit
@@ -926,7 +930,7 @@ input[type='url']
             color: #8a9096
 
 
-.inspire-holder
+.inspire-holder, .featured-software-holder
   width: 100%
   position: relative
   height: auto
@@ -1002,10 +1006,9 @@ input[type='url']
     .orbit-bullets
       position: relative
       top: 20px
-    .orbit-next.desktop
+    .orbit-next
       height: 20.25em
       margin: 0
-      background: rgba(66,74,83,0.92)
       &:before
         content: ''
         position: absolute
@@ -1016,12 +1019,11 @@ input[type='url']
         z-index: 0
         background-image: url(img/icon-sprite.png)
         background-position: -35px -48px
-    .orbit-prev.desktop
+    .orbit-prev
       height: 20.25em
       width: 330px
       margin: 0
       left: -330px
-      background: rgba(66,74,83,0.92)
       &:before
         content: ''
         position: absolute
@@ -1034,6 +1036,16 @@ input[type='url']
         background-position: 0px -48px
     span
       display: none
+
+.dark-grey
+  .desktop
+    background: rgba(66,74,83,0.92)
+
+.light-grey
+  .desktop
+    background: rgba(238,239,241,0.92)
+
+
 
 .your-community
   padding: 110px 0 34px 0
@@ -1050,13 +1062,12 @@ input[type='url']
       width: 1px 0
       style: solid
       color: $light-grey-border
-    padding: 18px 0
+    padding: 18px 0 10px 0
     .large-6
       height: auto
       @media only screen and (min-width: 768px)
         &:first-child
           padding-left: 0!important
-
     h5
       text-transform: uppercase
       color: $h-tag-small-color
@@ -1066,7 +1077,7 @@ input[type='url']
       list-style: none
       text-align: left
       padding: 0
-      margin: 20px 0 35px 0
+      margin: 20px 0 0 0
       li
         position: relative
         display: block
@@ -1093,25 +1104,26 @@ input[type='url']
           clear: none
           margin: 0
           width: 81%
-          p
+          h4
             width: 100%
             position: relative
-            padding: 5px 0 0 0
+            padding: 5px 0 8px 0
             margin: 0
             display: block
             float: left
             clear: right
-            color: $std-font-color
+            color: $h-tag-small-color
             font:
               family: $gothic-font-family
+              weight: 500
               size: 1em
             a
               color: inherit
-              text-decoration: underline
               font:
                 family: inherit
                 size: inherit
           p.cite
+            margin: 0 0 5px 0
             position: relative
             float: left
             clear: right
@@ -1124,6 +1136,19 @@ input[type='url']
               text-decoration: underline
               display: inline
               color: #8a9096
+        blockquote
+          margin: 20px 0 13px 20px
+          border-left: 3px solid #1a7bc1
+          padding: 0 0 0 20px
+          p
+            padding: 0 0 20px 0
+            margin: 0
+            color: #7b7b7b
+            font:
+              size: 1.125em
+              style: italic
+            &:last-child
+              padding: 0
 
 
 @media only screen and (min-width: 768px)

@@ -240,6 +240,9 @@ input[type='url'] {
 
 /*END: Debug msg */
 /*START: General usage classes */
+.light-grey {
+  background-color: #eeeff1; }
+
 .dark-grey {
   background-color: #424a53; }
   .dark-grey h1, .dark-grey h2, .dark-grey h3 {
@@ -770,7 +773,6 @@ input[type='url'] {
           font-size: 1em; }
           .whats-new ul li .holder p a {
             color: inherit;
-            text-decoration: underline;
             font-family: inherit;
             font-size: inherit; }
         .whats-new ul li .holder p.cite {
@@ -786,74 +788,73 @@ input[type='url'] {
             display: inline;
             color: #8a9096; }
 
-.inspire-holder {
+.inspire-holder, .featured-software-holder {
   width: 100%;
   position: relative;
   height: auto;
   text-align: center;
   overflow: hidden;
   padding: 50px 0 60px; }
-  .inspire-holder .column, .inspire-holder .columns {
+  .inspire-holder .column, .inspire-holder .columns, .featured-software-holder .column, .featured-software-holder .columns {
     padding: 0; }
-  .inspire-holder ul {
+  .inspire-holder ul, .featured-software-holder ul {
     width: 100%; }
-    .inspire-holder ul li {
+    .inspire-holder ul li, .featured-software-holder ul li {
       width: 100%; }
-      .inspire-holder ul li div {
+      .inspire-holder ul li div, .featured-software-holder ul li div {
         float: left;
         margin: 0 1.125em 1.25em;
         height: 20.25em;
         width: 17.75em;
         background-color: white; }
-        .inspire-holder ul li div img {
+        .inspire-holder ul li div img, .featured-software-holder ul li div img {
           border-width: 0 0 3px 0;
           border-style: solid; }
-        .inspire-holder ul li div .heading {
+        .inspire-holder ul li div .heading, .featured-software-holder ul li div .heading {
           margin: 0;
           clear: both;
           height: 8.813em;
           padding: 1.25em; }
-          .inspire-holder ul li div .heading h3 {
+          .inspire-holder ul li div .heading h3, .featured-software-holder ul li div .heading h3 {
             font-size: 1.313em;
             font-weight: 400;
             color: #222529; }
-          .inspire-holder ul li div .heading h4 {
+          .inspire-holder ul li div .heading h4, .featured-software-holder ul li div .heading h4 {
             font-size: 0.75em;
             text-transform: uppercase; }
-      .inspire-holder ul li .use-it img {
+      .inspire-holder ul li .use-it img, .featured-software-holder ul li .use-it img {
         border-color: #994275; }
-      .inspire-holder ul li .use-it .heading h4 {
+      .inspire-holder ul li .use-it .heading h4, .featured-software-holder ul li .use-it .heading h4 {
         color: #994275; }
-      .inspire-holder ul li .fix-it img {
+      .inspire-holder ul li .fix-it img, .featured-software-holder ul li .fix-it img {
         border-color: #f19d19; }
-      .inspire-holder ul li .fix-it .heading h4 {
+      .inspire-holder ul li .fix-it .heading h4, .featured-software-holder ul li .fix-it .heading h4 {
         color: #f19d19; }
-      .inspire-holder ul li .explore-it img {
+      .inspire-holder ul li .explore-it img, .featured-software-holder ul li .explore-it img {
         border-color: #e35d68; }
-      .inspire-holder ul li .explore-it .heading h4 {
+      .inspire-holder ul li .explore-it .heading h4, .featured-software-holder ul li .explore-it .heading h4 {
         color: #e35d68; }
-      .inspire-holder ul li .share-it img {
+      .inspire-holder ul li .share-it img, .featured-software-holder ul li .share-it img {
         border-color: #1a7bc0; }
-      .inspire-holder ul li .share-it .heading h4 {
+      .inspire-holder ul li .share-it .heading h4, .featured-software-holder ul li .share-it .heading h4 {
         color: #1a7bc0; }
-      .inspire-holder ul li .about-it img {
+      .inspire-holder ul li .about-it img, .featured-software-holder ul li .about-it img {
         border-color: #60cdaf; }
-      .inspire-holder ul li .about-it .heading h4 {
+      .inspire-holder ul li .about-it .heading h4, .featured-software-holder ul li .about-it .heading h4 {
         color: #60cdaf; }
-  .inspire-holder .orbit-container {
+  .inspire-holder .orbit-container, .featured-software-holder .orbit-container {
     padding: 0 0 30px 0;
     overflow: visible; }
-    .inspire-holder .orbit-container .orbit-container {
+    .inspire-holder .orbit-container .orbit-container, .featured-software-holder .orbit-container .orbit-container {
       padding: 0;
       overflow: visible; }
-    .inspire-holder .orbit-container .orbit-bullets {
+    .inspire-holder .orbit-container .orbit-bullets, .featured-software-holder .orbit-container .orbit-bullets {
       position: relative;
       top: 20px; }
-    .inspire-holder .orbit-container .orbit-next.desktop {
+    .inspire-holder .orbit-container .orbit-next, .featured-software-holder .orbit-container .orbit-next {
       height: 20.25em;
-      margin: 0;
-      background: rgba(66, 74, 83, 0.92); }
-      .inspire-holder .orbit-container .orbit-next.desktop:before {
+      margin: 0; }
+      .inspire-holder .orbit-container .orbit-next:before, .featured-software-holder .orbit-container .orbit-next:before {
         content: "";
         position: absolute;
         top: 120px;
@@ -863,13 +864,12 @@ input[type='url'] {
         z-index: 0;
         background-image: url(img/icon-sprite.png);
         background-position: -35px -48px; }
-    .inspire-holder .orbit-container .orbit-prev.desktop {
+    .inspire-holder .orbit-container .orbit-prev, .featured-software-holder .orbit-container .orbit-prev {
       height: 20.25em;
       width: 330px;
       margin: 0;
-      left: -330px;
-      background: rgba(66, 74, 83, 0.92); }
-      .inspire-holder .orbit-container .orbit-prev.desktop:before {
+      left: -330px; }
+      .inspire-holder .orbit-container .orbit-prev:before, .featured-software-holder .orbit-container .orbit-prev:before {
         content: "";
         position: absolute;
         top: 120px;
@@ -879,8 +879,14 @@ input[type='url'] {
         z-index: 0;
         background-image: url(img/icon-sprite.png);
         background-position: 0px -48px; }
-    .inspire-holder .orbit-container span {
+    .inspire-holder .orbit-container span, .featured-software-holder .orbit-container span {
       display: none; }
+
+.dark-grey .desktop {
+  background: rgba(66, 74, 83, 0.92); }
+
+.light-grey .desktop {
+  background: rgba(238, 239, 241, 0.92); }
 
 .your-community {
   padding: 110px 0 34px 0;
@@ -896,7 +902,7 @@ input[type='url'] {
     border-width: 1px 0;
     border-style: solid;
     border-color: #cacdd1;
-    padding: 18px 0; }
+    padding: 18px 0 10px 0; }
     .your-community .list-holder .large-6 {
       height: auto; }
       @media only screen and (min-width: 768px) {
@@ -911,7 +917,7 @@ input[type='url'] {
       list-style: none;
       text-align: left;
       padding: 0;
-      margin: 20px 0 35px 0; }
+      margin: 20px 0 0 0; }
       .your-community .list-holder ul li {
         position: relative;
         display: block;
@@ -936,23 +942,24 @@ input[type='url'] {
           clear: none;
           margin: 0;
           width: 81%; }
-          .your-community .list-holder ul li .holder p {
+          .your-community .list-holder ul li .holder h4 {
             width: 100%;
             position: relative;
-            padding: 5px 0 0 0;
+            padding: 5px 0 8px 0;
             margin: 0;
             display: block;
             float: left;
             clear: right;
-            color: #454d54;
+            color: #424a53;
             font-family: "Gotham";
+            font-weight: 500;
             font-size: 1em; }
-            .your-community .list-holder ul li .holder p a {
+            .your-community .list-holder ul li .holder h4 a {
               color: inherit;
-              text-decoration: underline;
               font-family: inherit;
               font-size: inherit; }
           .your-community .list-holder ul li .holder p.cite {
+            margin: 0 0 5px 0;
             position: relative;
             float: left;
             clear: right;
@@ -964,6 +971,18 @@ input[type='url'] {
               text-decoration: underline;
               display: inline;
               color: #8a9096; }
+        .your-community .list-holder ul li blockquote {
+          margin: 20px 0 13px 20px;
+          border-left: 3px solid #1a7bc1;
+          padding: 0 0 0 20px; }
+          .your-community .list-holder ul li blockquote p {
+            padding: 0 0 20px 0;
+            margin: 0;
+            color: #7b7b7b;
+            font-size: 1.125em;
+            font-style: italic; }
+            .your-community .list-holder ul li blockquote p:last-child {
+              padding: 0; }
 
 @media only screen and (min-width: 768px) {
   .nav-holder .row {
