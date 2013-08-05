@@ -23,6 +23,8 @@ $serif-font-family: 'PMN Caecilia', serif
 $gothic-font-family: 'Gotham'
 $body-font-family: 'Whitney HTF', 'Helvetica Neue'
 $std-font-color: #454d54
+$h-tag-std-color: #222529
+$h-tag-small-color: #424a53
 
 
 /* Background color for the top bar */
@@ -94,9 +96,16 @@ body
 
 h1, h2, h3
   font-family: $serif-font-family
+  color: $h-tag-std-color
 h2
   font-size: 1.875em
   font-weight: 400
+
+h5
+  font:
+    family: $gothic-font-family
+    size: 0.75em
+    weight: 500
 
 .row
   max-width: 60em
@@ -317,6 +326,17 @@ input[type='url']
   left: 610px
 
 /*END: Debug msg*/
+
+/*START: General usage classes*/
+.dark-grey
+  background-color: $dark-grey-bg
+  h1, h2, h3
+    color: #fff
+    font-family: $serif-font-family
+  h4
+    font-family: $gothic-font-family
+
+/*END: General usage classes*/
 
 .global-header
   background-color: $header-bg
@@ -703,7 +723,7 @@ input[type='url']
 #nav-holder.respond
   position: fixed
   top: 50px
-  border-bottom: 2px solid $light-grey-border
+  border-bottom: 1px solid $light-grey-border
 
 
 .feature-holder
@@ -912,12 +932,201 @@ input[type='url']
   height: auto
   text-align: center
   overflow: hidden
+  padding: 50px 0 60px
+  .column, .columns
+    padding: 0
+  ul
+    width: 100%
+    li
+      width: 100%
+      div
+        float: left
+        margin: 0 1.125em 1.25em
+        height: 20.25em
+        width: 17.75em
+        background-color: #fff
+        img
+          border:
+            width: 0 0 3px 0
+            style: solid
 
+        .heading
+          margin: 0
+          clear: both
+          height: 8.813em
+          padding: 1.25em
+          h3
+            font:
+              size: 1.313em
+              weight: 400
+            color: $h-tag-std-color
+          h4
+            font-size: 0.75em
+            text-transform: uppercase
+      .use-it
+        img
+          border-color: $use-it-nav-bg
+        .heading
+          h4
+            color: $use-it-nav-bg
+      .fix-it
+        img
+          border-color: $fix-it-nav-bg
+        .heading
+          h4
+            color: $fix-it-nav-bg
+      .explore-it
+        img
+          border-color: $explore-it-nav-bg
+        .heading
+          h4
+            color: $explore-it-nav-bg
+      .share-it
+        img
+          border-color: $share-it-nav-bg
+        .heading
+          h4
+            color: $share-it-nav-bg
+      .about-it
+        img
+          border-color: $about-it-nav-bg
+        .heading
+          h4
+            color: $about-it-nav-bg
+  .orbit-container
+    padding: 0 0 30px 0
+    overflow: visible
+    .orbit-container
+      padding: 0
+      overflow: visible
+    .orbit-bullets
+      position: relative
+      top: 20px
+    .orbit-next.desktop
+      height: 20.25em
+      margin: 0
+      background: rgba(66,74,83,0.92)
+      &:before
+        content: ''
+        position: absolute
+        top: 120px
+        left: 40px
+        width: 31px
+        height: 53px
+        z-index: 0
+        background-image: url(img/icon-sprite.png)
+        background-position: -35px -48px
+    .orbit-prev.desktop
+      height: 20.25em
+      width: 330px
+      margin: 0
+      left: -330px
+      background: rgba(66,74,83,0.92)
+      &:before
+        content: ''
+        position: absolute
+        top: 120px
+        right: 40px
+        width: 31px
+        height: 53px
+        z-index: 0
+        background-image: url(img/icon-sprite.png)
+        background-position: 0px -48px
+    span
+      display: none
+
+.your-community
+  padding: 110px 0 34px 0
+  position: relative
+  background: #fff url(img/icon-your-community.png) no-repeat center 36px
+  .list-holder
+    position: relative
+    display: block
+    overflow: hidden
+    width: 100%
+    height: auto
+    margin: 34px 0
+    border:
+      width: 1px 0
+      style: solid
+      color: $light-grey-border
+    padding: 18px 0
+    .large-6
+      height: auto
+      @media only screen and (min-width: 768px)
+        &:first-child
+          padding-left: 0!important
+
+    h5
+      text-transform: uppercase
+      color: $h-tag-small-color
+    ul
+      width: 100%
+      height: auto
+      list-style: none
+      text-align: left
+      padding: 0
+      margin: 20px 0 35px 0
+      li
+        position: relative
+        display: block
+        width: 100%
+        height: auto
+        padding: 15px 0
+        overflow: hidden
+        border:
+          color: $light-grey-border
+          width: 1px 0 0 0
+          style: solid
+        .circle
+          width: 3.75em
+          height: 3.75em
+          border: 1px solid transparent
+          border-radius: 2em
+        div
+          float: left
+          clear: left
+          margin: 0 20px 0 0
+          display: inline-block
+
+        .holder
+          clear: none
+          margin: 0
+          width: 81%
+          p
+            width: 100%
+            position: relative
+            padding: 5px 0 0 0
+            margin: 0
+            display: block
+            float: left
+            clear: right
+            color: $std-font-color
+            font:
+              family: $gothic-font-family
+              size: 1em
+            a
+              color: inherit
+              text-decoration: underline
+              font:
+                family: inherit
+                size: inherit
+          p.cite
+            position: relative
+            float: left
+            clear: right
+            color: #8a9096
+            font:
+              size: 0.8em
+              family: $body-font-family
+            a
+              position: relative
+              text-decoration: underline
+              display: inline
+              color: #8a9096
 
 
 @media only screen and (min-width: 768px)
-
-
   .nav-holder
     .row
       min-height: $topbar-height-mob

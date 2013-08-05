@@ -13,11 +13,17 @@ body {
   font-family: "Whitney HTF", "Helvetica Neue"; }
 
 h1, h2, h3 {
-  font-family: "PMN Caecilia", serif; }
+  font-family: "PMN Caecilia", serif;
+  color: #222529; }
 
 h2 {
   font-size: 1.875em;
   font-weight: 400; }
+
+h5 {
+  font-family: "Gotham";
+  font-size: 0.75em;
+  font-weight: 500; }
 
 .row {
   max-width: 60em; }
@@ -233,6 +239,16 @@ input[type='url'] {
   left: 610px; }
 
 /*END: Debug msg */
+/*START: General usage classes */
+.dark-grey {
+  background-color: #424a53; }
+  .dark-grey h1, .dark-grey h2, .dark-grey h3 {
+    color: white;
+    font-family: "PMN Caecilia", serif; }
+  .dark-grey h4 {
+    font-family: "Gotham"; }
+
+/*END: General usage classes */
 .global-header {
   background-color: #22252a;
   height: 50px;
@@ -590,7 +606,7 @@ input[type='url'] {
 #nav-holder.respond {
   position: fixed;
   top: 50px;
-  border-bottom: 2px solid #cacdd1; }
+  border-bottom: 1px solid #cacdd1; }
 
 .feature-holder {
   width: 100%;
@@ -775,7 +791,179 @@ input[type='url'] {
   position: relative;
   height: auto;
   text-align: center;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 50px 0 60px; }
+  .inspire-holder .column, .inspire-holder .columns {
+    padding: 0; }
+  .inspire-holder ul {
+    width: 100%; }
+    .inspire-holder ul li {
+      width: 100%; }
+      .inspire-holder ul li div {
+        float: left;
+        margin: 0 1.125em 1.25em;
+        height: 20.25em;
+        width: 17.75em;
+        background-color: white; }
+        .inspire-holder ul li div img {
+          border-width: 0 0 3px 0;
+          border-style: solid; }
+        .inspire-holder ul li div .heading {
+          margin: 0;
+          clear: both;
+          height: 8.813em;
+          padding: 1.25em; }
+          .inspire-holder ul li div .heading h3 {
+            font-size: 1.313em;
+            font-weight: 400;
+            color: #222529; }
+          .inspire-holder ul li div .heading h4 {
+            font-size: 0.75em;
+            text-transform: uppercase; }
+      .inspire-holder ul li .use-it img {
+        border-color: #994275; }
+      .inspire-holder ul li .use-it .heading h4 {
+        color: #994275; }
+      .inspire-holder ul li .fix-it img {
+        border-color: #f19d19; }
+      .inspire-holder ul li .fix-it .heading h4 {
+        color: #f19d19; }
+      .inspire-holder ul li .explore-it img {
+        border-color: #e35d68; }
+      .inspire-holder ul li .explore-it .heading h4 {
+        color: #e35d68; }
+      .inspire-holder ul li .share-it img {
+        border-color: #1a7bc0; }
+      .inspire-holder ul li .share-it .heading h4 {
+        color: #1a7bc0; }
+      .inspire-holder ul li .about-it img {
+        border-color: #60cdaf; }
+      .inspire-holder ul li .about-it .heading h4 {
+        color: #60cdaf; }
+  .inspire-holder .orbit-container {
+    padding: 0 0 30px 0;
+    overflow: visible; }
+    .inspire-holder .orbit-container .orbit-container {
+      padding: 0;
+      overflow: visible; }
+    .inspire-holder .orbit-container .orbit-bullets {
+      position: relative;
+      top: 20px; }
+    .inspire-holder .orbit-container .orbit-next.desktop {
+      height: 20.25em;
+      margin: 0;
+      background: rgba(66, 74, 83, 0.92); }
+      .inspire-holder .orbit-container .orbit-next.desktop:before {
+        content: "";
+        position: absolute;
+        top: 120px;
+        left: 40px;
+        width: 31px;
+        height: 53px;
+        z-index: 0;
+        background-image: url(img/icon-sprite.png);
+        background-position: -35px -48px; }
+    .inspire-holder .orbit-container .orbit-prev.desktop {
+      height: 20.25em;
+      width: 330px;
+      margin: 0;
+      left: -330px;
+      background: rgba(66, 74, 83, 0.92); }
+      .inspire-holder .orbit-container .orbit-prev.desktop:before {
+        content: "";
+        position: absolute;
+        top: 120px;
+        right: 40px;
+        width: 31px;
+        height: 53px;
+        z-index: 0;
+        background-image: url(img/icon-sprite.png);
+        background-position: 0px -48px; }
+    .inspire-holder .orbit-container span {
+      display: none; }
+
+.your-community {
+  padding: 110px 0 34px 0;
+  position: relative;
+  background: white url(img/icon-your-community.png) no-repeat center 36px; }
+  .your-community .list-holder {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin: 34px 0;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #cacdd1;
+    padding: 18px 0; }
+    .your-community .list-holder .large-6 {
+      height: auto; }
+      @media only screen and (min-width: 768px) {
+        .your-community .list-holder .large-6:first-child {
+          padding-left: 0 !important; } }
+    .your-community .list-holder h5 {
+      text-transform: uppercase;
+      color: #424a53; }
+    .your-community .list-holder ul {
+      width: 100%;
+      height: auto;
+      list-style: none;
+      text-align: left;
+      padding: 0;
+      margin: 20px 0 35px 0; }
+      .your-community .list-holder ul li {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 15px 0;
+        overflow: hidden;
+        border-color: #cacdd1;
+        border-width: 1px 0 0 0;
+        border-style: solid; }
+        .your-community .list-holder ul li .circle {
+          width: 3.75em;
+          height: 3.75em;
+          border: 1px solid transparent;
+          border-radius: 2em; }
+        .your-community .list-holder ul li div {
+          float: left;
+          clear: left;
+          margin: 0 20px 0 0;
+          display: inline-block; }
+        .your-community .list-holder ul li .holder {
+          clear: none;
+          margin: 0;
+          width: 81%; }
+          .your-community .list-holder ul li .holder p {
+            width: 100%;
+            position: relative;
+            padding: 5px 0 0 0;
+            margin: 0;
+            display: block;
+            float: left;
+            clear: right;
+            color: #454d54;
+            font-family: "Gotham";
+            font-size: 1em; }
+            .your-community .list-holder ul li .holder p a {
+              color: inherit;
+              text-decoration: underline;
+              font-family: inherit;
+              font-size: inherit; }
+          .your-community .list-holder ul li .holder p.cite {
+            position: relative;
+            float: left;
+            clear: right;
+            color: #8a9096;
+            font-size: 0.8em;
+            font-family: "Whitney HTF", "Helvetica Neue"; }
+            .your-community .list-holder ul li .holder p.cite a {
+              position: relative;
+              text-decoration: underline;
+              display: inline;
+              color: #8a9096; }
 
 @media only screen and (min-width: 768px) {
   .nav-holder .row {
